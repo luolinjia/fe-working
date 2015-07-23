@@ -39,7 +39,7 @@
      </div>
  </div>
  *
- * $('.c-outer').multislider({
+ * $('.all').multislider({
  *      width: 1920,                // the default width value
  *      dots: true,                 // display the dots under of it.
 		number: false,              // display the number regarding dots.
