@@ -1,5 +1,9 @@
 # A new widget of [banner slider](https://github.com/luolinjia/fe-working/tree/gh-pages/jquery-multislider)
 
+## Direct Link
+
+[Demo](http://luolinjia.com/fe-working/jquery-multislider/)
+
 ## Usage
 
 - all functions
