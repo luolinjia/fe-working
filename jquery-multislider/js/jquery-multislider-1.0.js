@@ -4,51 +4,19 @@
  * @dependence jQuery
  * @createDate 07-22-2015
  * @usage:
- <div class="all">
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n1.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title1.png" /></div>
-             <button>查看详情</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-     </div>
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n2.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title2.png" /></div>
-             <button>接入OneNET</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line2.png" alt=""/></div>
-     </div>
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n3.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title3.png" /></div>
-             <button>进入开发者中心</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-     </div>
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n4.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title4.png" /></div>
-             <button>联系我们</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-     </div>
- </div>
+ * <div class="all"></div>
  *
  * $('.all').multislider({
+ *      banners: [{name: '', link: ''}, {name: '', link: ''}],      // banners is required!!!!
  *      width: 1920,                // the default width value
  *      dots: true,                 // display the dots under of it.
-		number: false,              // display the number regarding dots.
-		color: '#e6e6e6',           // set the default color for the dots' background-color
-		verticalDuring: 1000,       // the time of animation regarding the transition vertical
-		highlight: '#e63939',       // highlight the dots' background-color
-		aDuring: 3500,              // set the total animation time
-		aBack: true,                // set whether you need to animate something after showing the right to left.
-		aDirection: 'RTL'           // 'RTL' right to left; 'LTR' left to right
+ *		number: false,              // display the number regarding dots.
+ *		color: '#e6e6e6',           // set the default color for the dots' background-color
+ *		verticalDuring: 1000,       // the time of animation regarding the transition vertical
+ *		highlight: '#e63939',       // highlight the dots' background-color
+ *		aDuring: 3500,              // set the total animation time
+ *		aBack: true,                // set whether you need to animate something after showing the right to left.
+ * 		aDirection: 'RTL'           // 'RTL' right to left; 'LTR' left to right
  * });
  **/
 (function($){
@@ -56,7 +24,7 @@
         var index = 1, flag = 1,
             time,
             o = $(this),
-            qty = o.find('.outer').length,
+            qty = 0,
             CSS = {
                 RTL: {
                     'z-index': 1,
@@ -83,6 +51,8 @@
                 aDirection: 'RTL'
             }, _ = {
                 init: function () {
+                    qty = settings.banners.length;
+                    _.renderMainLayout();
                     settings.dots ? _.renderNaviLi() : '';
                     _.excuteAfterLoaded();
                 },
@@ -107,6 +77,14 @@
                         _.expendWidth(index);
                         settings.dots ? _.bindHover() : '';
                     });
+                },
+                renderMainLayout: function () {
+                    var list = [];
+                    for (var i = 0, size = qty; i < size; i++) {
+                        var item = settings.banners[i], mBanner = typeof(item['name']) === 'string' ? item['name'] : item['name']['step1'];
+                        list.push('<div class="outer"><div class="inner">' + (settings.aBack ? '<img src="' + mBanner + '" alt=""/>' : '<a href="' + item.link + '"><img src="' + mBanner + '" alt=""/></a>') + '</div>' + (settings.aBack ? '<a href="' + item.link + '" class="inner-slider"><div class="inner-slider-img"><img src="' + item['name']['step2'] + '" /></div><button>' + item['name']['step2label'] + '</button></a><div class="inner-line"><img src="' + item['name']['step3'] + '" alt=""/></div>' : '') + '</div>');
+                    }
+                    o.append(list.join(''));
                 },
                 renderNaviLi: function () {
                     var list = [];

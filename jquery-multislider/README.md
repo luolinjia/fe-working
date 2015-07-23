@@ -7,68 +7,55 @@
 ## Usage
 
 - all functions
-```html
-<div class="all">
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n1.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title1.png" /></div>
-             <button>查看详情</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-     </div>
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n2.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title2.png" /></div>
-             <button>接入OneNET</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line2.png" alt=""/></div>
-     </div>
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n3.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title3.png" /></div>
-             <button>进入开发者中心</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-     </div>
-     <div class="outer">
-         <div class="inner"><img src="img/banner_n4.jpg" alt=""/></div>
-         <a href="#" class="inner-slider">
-             <div class="inner-slider-img"><img src="img/b_title4.png" /></div>
-             <button>联系我们</button>
-         </a>
-         <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-     </div>
- </div>
-```
+
 
 ```js
-$('.all').multislider();
+$('.all', $('.control-all')).multislider({
+    banners: [{
+        name: {
+            step1: 'img/banner_n1.jpg',
+            step2: 'img/b_title1.png',
+            step2label: '查看详情',
+            step3: 'img/banner_line1.png'
+        },
+        link: '#'
+    }, {
+        name: {
+            step1: 'img/banner_n2.jpg',
+            step2: 'img/b_title2.png',
+            step2label: '接入OneNET',
+            step3: 'img/banner_line2.png'
+        },
+        link: '#'
+    }, {
+        name: {
+            step1: 'img/banner_n3.jpg',
+            step2: 'img/b_title3.png',
+            step2label: '进入开发者中心',
+            step3: 'img/banner_line1.png'
+        },
+        link: '#'
+    }, {
+        name: {
+            step1: 'img/banner_n4.jpg',
+            step2: 'img/b_title4.png',
+            step2label: '联系我们',
+            step3: 'img/banner_line1.png'
+        },
+        link: '#'
+    }]
+});
 ```
 
 - API
-    - html DIY.(div.all is your DIY. and you can remove some tags you don't need, like this:)But You can't remove or replace the classes:**outer** or **inner** except that you change the style class name in the same time.
+    - html.(class name .all is not been changed, as it is associated with CSS file : all.css). But you can put div.all in some blocks wherever you want.
     ```html
-    <div class="all">
-         <div class="outer">
-             <div class="inner"><img src="img/banner_n1.jpg" alt=""/></div>
-         </div>
-         <div class="outer">
-             <div class="inner"><img src="img/banner_n2.jpg" alt=""/></div>
-         </div>
-         <div class="outer">
-             <div class="inner"><img src="img/banner_n3.jpg" alt=""/></div>
-         </div>
-         <div class="outer">
-             <div class="inner"><img src="img/banner_n4.jpg" alt=""/></div>
-         </div>
-     </div>
+    <div class="all"></div>
     ```
     - effects DIY
     ```html
     $('.all').multislider({
+        banners: [],                // REQUIRED!!!
         width: 1920,                // the default width value
         dots: true,                 // display the dots under of it.
         number: false,              // display the number regarding dots.

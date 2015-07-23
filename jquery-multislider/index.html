@@ -15,179 +15,292 @@
 <h3>All functions</h3>
 <pre>
     <code>
-        $('.all', $('.control-all')).multislider();
+        $('.all', $('.control-all')).multislider({
+            banners: [{
+                name: {
+                    step1: 'img/banner_n1.jpg',
+                    step2: 'img/b_title1.png',
+                    step2label: '查看详情',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n2.jpg',
+                    step2: 'img/b_title2.png',
+                    step2label: '接入OneNET',
+                    step3: 'img/banner_line2.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n3.jpg',
+                    step2: 'img/b_title3.png',
+                    step2label: '进入开发者中心',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n4.jpg',
+                    step2: 'img/b_title4.png',
+                    step2label: '联系我们',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }]
+        });
     </code>
 </pre>
 <div class="control-all">
-    <div class="all">
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n1.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title1.png" /></div>
-                <button>查看详情</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n2.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title2.png" /></div>
-                <button>接入OneNET</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line2.png" alt=""/></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n3.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title3.png" /></div>
-                <button>进入开发者中心</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n4.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title4.png" /></div>
-                <button>联系我们</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-        </div>
-    </div>
+    <div class="all"></div>
 </div>
 <h3>Left To Right (Right To Left as default)</h3>
 <pre>
     <code>
         $('.all', $('.control-ltr')).multislider({
-            aDirection: 'LTR' // LTR: left to right; RTL: Right to left (default value)
+            aDirection: 'LTR', // LTR: left to right; RTL: Right to left (default value)
+            banners: [{
+                name: {
+                    step1: 'img/banner_n1.jpg',
+                    step2: 'img/b_title1.png',
+                    step2label: '查看详情',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n2.jpg',
+                    step2: 'img/b_title2.png',
+                    step2label: '接入OneNET',
+                    step3: 'img/banner_line2.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n3.jpg',
+                    step2: 'img/b_title3.png',
+                    step2label: '进入开发者中心',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n4.jpg',
+                    step2: 'img/b_title4.png',
+                    step2label: '联系我们',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }]
         });
     </code>
 </pre>
 <div class="control-ltr">
-    <div class="all">
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n1.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title1.png" /></div>
-                <button>查看详情</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n2.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title2.png" /></div>
-                <button>接入OneNET</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line2.png" alt=""/></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n3.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title3.png" /></div>
-                <button>进入开发者中心</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><img src="img/banner_n4.jpg" alt=""/></div>
-            <a href="#" class="inner-slider">
-                <div class="inner-slider-img"><img src="img/b_title4.png" /></div>
-                <button>联系我们</button>
-            </a>
-            <div class="inner-line"><img src="img/banner_line1.png" alt=""/></div>
-        </div>
-    </div>
+    <div class="all"></div>
 </div>
 <h3>Contracted Pictures Slider</h3>
 <pre>
     <code>
         $('.all', $('.control-pic')).multislider({
-            aBack: false
+            aBack: false,
+            banners: [{
+                name: 'img/banner_n1.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n2.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n3.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n4.jpg',
+                link: '#'
+            }]
         });
     </code>
 </pre>
 <div class="control-pic">
-    <div class="all">
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n1.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n2.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n3.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n4.jpg" alt=""/></a></div>
-        </div>
-    </div>
+    <div class="all"></div>
 </div>
 <h3>Only Pictures Slider(Don't include the dots)</h3>
 <pre>
     <code>
         $('.all', $('.control-pic-only')).multislider({
+            dots: false,
             aBack: false,
-            dots: false
+            banners: [{
+                name: 'img/banner_n1.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n2.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n3.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n4.jpg',
+                link: '#'
+            }]
         });
     </code>
 </pre>
 <div class="control-pic-only">
-    <div class="all">
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n1.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n2.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n3.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n4.jpg" alt=""/></a></div>
-        </div>
-    </div>
+    <div class="all"></div>
 </div>
 <h3>DIY width(Set the width whatever you want)</h3>
 <pre>
     <code>
         $('.all', $('.control-width')).multislider({
             width: 800 // You should be the same to the outermost layer width you DIY.
+            aBack: false,
+            banners: [{
+                name: 'img/banner_n1.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n2.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n3.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n4.jpg',
+                link: '#'
+            }]
         });
     </code>
 </pre>
 <div class="control-width">
-    <div class="all">
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n1.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n2.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n3.jpg" alt=""/></a></div>
-        </div>
-        <div class="outer">
-            <div class="inner"><a href="#"><img src="img/banner_n4.jpg" alt=""/></a></div>
-        </div>
-    </div>
+    <div class="all"></div>
 </div>
 <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script src="js/jquery-multislider-1.0.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
-        $('.all', $('.control-all')).multislider();
+        $('.all', $('.control-all')).multislider({
+            banners: [{
+                name: {
+                    step1: 'img/banner_n1.jpg',
+                    step2: 'img/b_title1.png',
+                    step2label: '查看详情',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n2.jpg',
+                    step2: 'img/b_title2.png',
+                    step2label: '接入OneNET',
+                    step3: 'img/banner_line2.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n3.jpg',
+                    step2: 'img/b_title3.png',
+                    step2label: '进入开发者中心',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n4.jpg',
+                    step2: 'img/b_title4.png',
+                    step2label: '联系我们',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }]
+        });
+
         $('.all', $('.control-ltr')).multislider({
-            aDirection: 'LTR' // LTR: left to right; RTL: Right to left (default value)
+            aDirection: 'LTR', // LTR: left to right; RTL: Right to left (default value)
+            banners: [{
+                name: {
+                    step1: 'img/banner_n1.jpg',
+                    step2: 'img/b_title1.png',
+                    step2label: '查看详情',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n2.jpg',
+                    step2: 'img/b_title2.png',
+                    step2label: '接入OneNET',
+                    step3: 'img/banner_line2.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n3.jpg',
+                    step2: 'img/b_title3.png',
+                    step2label: '进入开发者中心',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }, {
+                name: {
+                    step1: 'img/banner_n4.jpg',
+                    step2: 'img/b_title4.png',
+                    step2label: '联系我们',
+                    step3: 'img/banner_line1.png'
+                },
+                link: '#'
+            }]
         });
+
         $('.all', $('.control-pic')).multislider({
-            aBack: false
-        });
-        $('.all', $('.control-pic-only')).multislider({
             aBack: false,
-            dots: false
+            banners: [{
+                name: 'img/banner_n1.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n2.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n3.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n4.jpg',
+                link: '#'
+            }]
         });
+
+        $('.all', $('.control-pic-only')).multislider({
+            dots: false,
+            aBack: false,
+            banners: [{
+                name: 'img/banner_n1.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n2.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n3.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n4.jpg',
+                link: '#'
+            }]
+        });
+
         $('.all', $('.control-width')).multislider({
-            width: 800
+            width: 800,
+            aBack: false,
+            banners: [{
+                name: 'img/banner_n1.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n2.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n3.jpg',
+                link: '#'
+            }, {
+                name: 'img/banner_n4.jpg',
+                link: '#'
+            }]
         });
     });
 </script>
