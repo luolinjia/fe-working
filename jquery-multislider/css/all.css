@@ -1,0 +1,142 @@
+@import url('./animation.css');
+
+/*******************/
+/* The basic style */
+/*******************/
+.all {
+    position: relative;
+    width: 100%;
+    height: 566px;
+}
+.all .outer {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+}
+.all .outer img {
+    position: absolute;
+}
+.all .outer .inner {
+    height: 566px;
+    position: absolute;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.all .loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    background-color: #f0f0f0;
+}
+.all .loading .spin {
+    position: relative;
+    top: 270px;
+    margin-left: 50%;
+}
+/*************************************************/
+/* display and control the step3 and step4 style */
+/*************************************************/
+.all .outer .inner-slider {
+    visibility: hidden;
+    width: 1185px;
+    height: 300px;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    z-index: 1;
+}
+.all .outer .inner-slider.visible {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+    opacity: 1;
+    -webkit-animation: innerSlider 1s ease;
+    -moz-animation: innerSlider 1s ease;
+    -o-animation: innerSlider 1s ease;
+    animation: innerSlider 1s ease;
+    z-index: 5;
+    visibility: visible;
+}
+.all .outer .inner-slider .inner-slider-img {
+    width: 450px;
+    height: 102px;
+}
+.all .outer .inner-slider button {
+    background-color: #e63939;
+    color: #fff;
+    width: 240px;
+    height: 55px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    margin-top: 80px;
+    cursor: pointer;
+}
+.all .outer .inner-line {
+    height: 566px;
+    position: absolute;
+    -webkit-background-size: cover;
+    background-size: cover;
+    opacity: 0;
+}
+.all .outer .inner-line.animate-line {
+    -webkit-animation: transitionO .3s ease-in 1s 1 normal;
+    -moz-animation: transitionO .3s ease-in 1s 1 normal;
+    -o-animation: transitionO .3s ease-in 1s 1 normal;
+    animation: transitionO .3s ease-in 1s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+/**************************************/
+/* display and control the dots style */
+/**************************************/
+.all ol {
+    display: block;
+    text-align: center;
+    padding-top: 580px;
+}
+.all ol li {
+    display: inline-block;
+    width: 88px;
+    height: 5px;
+    background-color: #e6e6e6;
+    margin-right: 10px;
+    cursor: pointer;
+}
+/******************************************/
+/* DIY some styles, you may replace yours */
+/******************************************/
+body {
+    background-color: #f0f0f0;
+}
+h3 {
+    margin-top: 100px;
+}
+.fork {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.control-all {
+    /*width: 800px;*/
+    /*height: 300px;*/
+}
+.control-width {
+    width: 800px;
+}
+.control-width .all {
+    height: 230px;
+}
+.control-width .inner {
+    height: 230px;
+}
+.control-width .all ol {
+    padding-top: 240px;
+}
+p.last {
+    font-size: 20px;
+}
