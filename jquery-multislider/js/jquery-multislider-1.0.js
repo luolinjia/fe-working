@@ -50,12 +50,18 @@
                 aBack: true,
                 aDirection: 'RTL'
             }, _ = {
+                /**
+                 * init the widget
+                 */
                 init: function () {
                     qty = settings.banners.length;
                     _.renderMainLayout();
                     settings.dots ? _.renderNaviLi() : '';
                     _.excuteAfterLoaded();
                 },
+                /**
+                 * check whether all images has loaded
+                 */
                 excuteAfterLoaded: function () {
                     var dom = '<div class="loading"><div class="spin"><img src="img/loading.png" class="icon-spin5 animate-spin"/>loading...</div></div>', defereds = [];
                     o.prepend(dom).find('img').each(function () {
@@ -78,6 +84,9 @@
                         settings.dots ? _.bindHover() : '';
                     });
                 },
+                /**
+                 * render the main banner layout
+                 */
                 renderMainLayout: function () {
                     var list = [];
                     for (var i = 0, size = qty; i < size; i++) {
@@ -86,6 +95,9 @@
                     }
                     o.append(list.join(''));
                 },
+                /**
+                 * render the dots
+                 */
                 renderNaviLi: function () {
                     var list = [];
                     for (var i = 0, size = qty; i < size; i++) {
@@ -94,21 +106,35 @@
                     var dom = '<ol class="banner-icon">' + list.join('') + '</ol>';
                     o.append(dom);
                 },
+                /**
+                 * set the dots style color
+                 * @num int
+                 */
                 setNaviLi: function (num) {
                     $('li', $('.banner-icon', o)).css('background-color', settings.color).eq(num).css('background-color', '').css('background-color', settings.highlight);
                 },
+                /**
+                 * execute the animation
+                 * @num int
+                 */
                 expendWidth: function (num) {
                     index = num;
                     settings.dots ? _.setNaviLi(num - 1) : '';
                     _.bgAnimate();
 
                 },
+                /**
+                 * init the banner css
+                 */
                 initBanner: function () {
                     var os = $('.outer', o).find('.inner'), osLine = $('.outer', o).find('.inner-line'), bannerList = o.find('.outer');
                     bannerList.css(CSS[settings.aDirection]).stop(true, true);
                     os.css({'width': settings.width});
                     osLine.css({'width': settings.width});
                 },
+                /**
+                 * click the dots and show the clicked one.
+                 */
                 bindHover: function () {
                     $('li', $('.banner-icon', o)).click(function () {
                         clearTimeout(time);
@@ -123,6 +149,9 @@
                         }, settings.aDuring);
                     });
                 },
+                /**
+                 * the detail animation
+                 */
                 bgAnimate: function () {
                     var os = $('.outer', o).find('.inner'), osLine = $('.outer', o).find('.inner-line'), ios = os.parent();
                     _.initBanner();
@@ -144,6 +173,10 @@
                         _.expendWidth(index);
                     }, settings.aDuring);
                 },
+                /**
+                 * set the animation css
+                 * @num int
+                 */
                 animation: function (num) {
                     o.find('.outer').eq(num)
                         .css({'z-index': 3})
@@ -158,6 +191,9 @@
                             top: '+=20'
                         }, settings.verticalDuring, settings.aBack ? _.animationBack : '');
                 },
+                /**
+                 * animation callback
+                 */
                 animationBack: function () {
                     var innerSlider = $('.inner-slider', o), outer = $(this).parents('.outer');
                     innerSlider.removeClass('visible');
