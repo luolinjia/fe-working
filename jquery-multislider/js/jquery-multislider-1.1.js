@@ -80,7 +80,7 @@
                     });
                     $.when.apply(null, defereds).done(function () {
                         o.find('.loading').remove();
-                        _.expendWidth(index);
+                        _.startAnimation(index);
                         settings.dots ? _.bindHover() : '';
                     });
                 },
@@ -117,7 +117,7 @@
                  * execute the animation
                  * @num {int}
                  */
-                expendWidth: function (num) {
+                startAnimation: function (num) {
                     index = num;
                     settings.dots ? _.setNaviLi(num - 1) : '';
                     _.bgAnimate();
@@ -145,7 +145,7 @@
                         _.animation(item - 1);
                         index = thiz.attr('data-no') > (qty - 1) ? 1 : parseInt(thiz.attr('data-no')) + 1;
                         time = setTimeout(function () {
-                            _.expendWidth(index);
+                            _.startAnimation(index);
                         }, settings.aDuring);
                     });
                 },
@@ -179,7 +179,7 @@
                     index = index + 1 > qty ? 1 : index + 1;
                     flag ++;
                     time = setTimeout(function() {
-                        _.expendWidth(index);
+                        _.startAnimation(index);
                     }, settings.aDuring);
                 },
                 /**
