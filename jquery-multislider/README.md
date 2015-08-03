@@ -4,7 +4,13 @@
 
 [Demo](http://luolinjia.com/fe-working/jquery-multislider/)
 
-## Usage
+## 1.1 
+
+- Fix the centering about banner images.(No matter whether it's zooming in or zooming out)
+    - **Zoom In**: as browser resolution becomes bigger, you need DIY the outest layer if you want.
+    - **Zoom Out**: as browser resollution becomes smaller, do **Nothing**
+
+## Usage 1.0
 
 - all functions
 

@@ -5,7 +5,8 @@
 /*******************/
 .all {
     position: relative;
-    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
     height: 566px;
 }
 .all .outer {
