@@ -2,6 +2,7 @@
 @import "animation.css";
 .content {
     font-family: "Microsoft YaHei", sans-serif;
+    margin-top: 150px;
 }
 .content .c-function .c-f-li {
     width: 1300px;
