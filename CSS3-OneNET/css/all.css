@@ -1,0 +1,594 @@
+@import "style.css";
+@import "animation.css";
+.content {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.content .c-function .c-f-li {
+    width: 1300px;
+    margin: 0 auto;
+}
+.content .c-function ul li {
+    float: left;
+    margin-right: 70px;
+    list-style-type: none;
+}
+.content .c-function ul li .link-container {
+    position: relative;
+    width: 246px;
+    height: 312px;
+    background-color: #e6e6e6;
+    overflow: hidden;
+}
+.content .c-function ul li .link-container .remain {
+    position: absolute;
+    width: 230px;
+    height: 296px;
+    margin: 8px;
+    text-align: center;
+    background-color: #f4f5f5;
+    z-index: 1;
+}
+.content .c-function ul li .link-container .remain h2,
+.content .c-function ul li .link-container .remain p {
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform .4s;
+    margin-top: 180px;
+    font-weight: normal;
+}
+.content .c-function ul li .link-container .remain p {
+    margin-top: 20px;
+    color: #bfbfbf;
+}
+.content .c-function ul li .link-container .after {
+    opacity: 0;
+    display: none\0;
+    position: absolute;
+    z-index: 2;
+    height: 180px;
+    width: 246px;
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+:root .content .c-function ul li .link-container .after {
+    display: block;
+}
+.content .c-function ul li .link-container .after .char {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    top: 55%;
+    line-height: 30px;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform .4s;
+}
+.content .c-function ul li .link-container .after .char .bg {
+    opacity: 1;
+    background-color: #1255b3;
+    position: absolute;
+    width: 246px;
+    height: 180px;
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+.content .c-function ul li .link-container .after .char p {
+    position: absolute;
+    margin: 36px;
+    width: 202px;
+    height: 180px;
+    color: #d5dded;
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+.content .c-function ul li .link-container i {
+    display: block;
+    margin: 0 auto;
+    left: 35%;
+    top: 75px;
+    font-size: 60px;
+    color: #525252;
+    -webkit-transition: -webkit-transform 0.4s, color 0.2s ease-in;
+    -moz-transition: -moz-transform 0.4s, color 0.2s ease-in;
+    transition: transform 0.4s, color 0.2s ease-in;
+    z-index: 3;
+    position: absolute;
+}
+.content .c-function ul li .link-container:hover .remain h2,
+.content .c-function ul li .link-container:hover .remain p {
+    -webkit-transform: translateY(60px);
+    -moz-transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    transform: translateY(60px);
+}
+.content .c-function ul li .link-container:hover .after {
+    opacity: 1;
+}
+.content .c-function ul li .link-container:hover .after .char {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform .4s;
+}
+.content .c-function ul li .link-container:hover .after .char .bg {
+    opacity: 0;
+}
+.content .c-function ul li .link-container:hover i {
+    -webkit-transform: translateY(-40px);
+    -moz-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+    color: #89aad9;
+    color: #525252\0;
+}
+:root .content .c-function ul li .link-container:hover i {
+    color: #89aad9;
+}
+.content .c-function ul li .cloud {
+    width: 230px;
+    height: 296px;
+    position: relative;
+    top: 8px;
+    top: 0\0;
+    left: 8px;
+    left: 0\0;
+}
+:root .content .c-function ul li .cloud {
+    top: 8px;
+    left: 8px;
+}
+.content .c-function ul li .cloud .cloud-wrap {
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 0 8px #e6e6e6, inset 0 0 3px #f0f0f0;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div {
+    display: block;
+    background-color: #f4f5f5\0;
+    border: 8px solid #e6e6e6\0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+}
+:root .content .c-function ul li .cloud .cloud-wrap .cloud-info div {
+    border-width: 0;
+    background-color: #f4f5f5;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div i {
+    display: block;
+    font-size: 60px;
+    margin-top: 75px;
+    color: #525252;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div h2 {
+    margin-top: 45px;
+    font-weight: normal;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div p {
+    margin-top: 20px;
+    color: #bfbfbf;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div.back {
+    -moz-transform: rotate3d(0, 1, 0, 180deg);
+    -webkit-transform: rotate3d(0, 1, 0, 180deg);
+    transform: rotate3d(0, 1, 0, 180deg);
+    background: url("../img/bg_cloud.jpg") no-repeat;
+    display: none\0;
+}
+:root .content .c-function ul li .cloud .cloud-wrap .cloud-info div.back {
+    display: block;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div.back .icon-cloud {
+    color: #fcbebf;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info div.back p {
+    margin-top: 36px;
+    width: 185px;
+    line-height: 30px;
+    color: #f6e0e3;
+    margin-left: 30px;
+    text-align: left;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE {
+    display: none;
+    display: block\0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE img {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE img.hover {
+    left: 0;
+    width: 100%;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE .word {
+    position: absolute;
+    z-index: 11;
+    opacity: 0;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE .word.hover {
+    -webkit-animation: bgWord 0.2s ease-in 0.3s 1 normal;
+    -moz-animation: bgWord 0.2s ease-in 0.3s 1 normal;
+    -o-animation: bgWord 0.2s ease-in 0.3s 1 normal;
+    animation: bgWord 0.2s ease-in 0.3s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE .word .icon-cloud {
+    color: #fcbebf;
+    display: block;
+    font-size: 60px;
+    margin-top: 75px;
+    text-align: center;
+}
+.content .c-function ul li .cloud .cloud-wrap .cloud-info-forIE .word p {
+    margin-top: 36px;
+    width: 185px;
+    line-height: 30px;
+    color: #f6e0e3;
+    margin-left: 30px;
+    text-align: left;
+}
+.content .c-function ul li .cloud:hover .cloud-wrap {
+    -moz-box-shadow: 0 0 0 4px #e6e6e6;
+    -webkit-box-shadow: 0 0 0 4px #e6e6e6;
+    box-shadow: 0 0 0 4px #e6e6e6;
+}
+.content .c-function ul li .cloud:hover .cloud-info {
+    transform: rotate3d(0, 1, 0, -180deg);
+    -moz-transform: rotate3d(0, 1, 0, -180deg);
+    -ms-transform: rotate3d(0, 1, 0, 0deg);
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+}
+.content .c-function ul li .app {
+    position: relative;
+    background-color: #e6e6e6;
+    width: 246px;
+    height: 312px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.content .c-function ul li .app .inner {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-perspective: 100px;
+    -moz-perspective: 100px;
+    perspective: 100px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.content .c-function ul li .app .inner .front {
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    width: 230px;
+    height: 296px;
+    z-index: 1;
+    margin: 8px;
+    background: #f4f5f5;
+    opacity: 1;
+}
+.content .c-function ul li .app .inner .front.hover {
+    -webkit-animation: frontOpacity 0.3s ease-in 0.3s 1 normal;
+    -moz-animation: frontOpacity 0.3s ease-in 0.3s 1 normal;
+    -o-animation: frontOpacity 0.3s ease-in 0.3s 1 normal;
+    animation: frontOpacity 0.3s ease-in 0.3s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .app .inner .front .inner-front {
+    font-size: 55px;
+    margin-top: 67px;
+    display: block;
+    color: #525252;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.content .c-function ul li .app .inner .front .inner-front.hover {
+    -webkit-animation: bgApp 0.5s ease-in 0s 1 normal;
+    -moz-animation: bgApp 0.5s ease-in 0s 1 normal;
+    -o-animation: bgApp 0.5s ease-in 0s 1 normal;
+    animation: bgApp 0.5s ease-in 0s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .app .inner .front h2,
+.content .c-function ul li .app .inner .front p {
+    -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -moz-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -o-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+.content .c-function ul li .app .inner .front h2 {
+    font-weight: normal;
+    margin-top: 55px;
+}
+.content .c-function ul li .app .inner .front p {
+    margin-top: 20px;
+    color: #bfbfbf;
+}
+.content .c-function ul li .app .inner .bg-app {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg_app.jpg") no-repeat;
+    -webkit-transition: all 0.01s ease-out 0.5s;
+    -moz-transition: all 0.01s ease-out 0.5s;
+    -o-transition: all 0.01s ease-out 0.5s;
+    transition: all 0.01s ease-out 0.5s;
+    display: none\0;
+}
+:root .content .c-function ul li .app .inner .bg-app {
+    display: block;
+}
+.content .c-function ul li .app .inner .bg-flight {
+    display: none\0;
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg_flight.png") -248px 0 no-repeat;
+}
+:root .content .c-function ul li .app .inner .bg-flight {
+    display: block;
+}
+.content .c-function ul li .app .inner .bg-flight.hover {
+    -webkit-animation: bgFlightHover 0.3s ease-in 0.5s 1 normal;
+    -moz-animation: bgFlightHover 0.3s ease-in 0.5s 1 normal;
+    -o-animation: bgFlightHover 0.3s ease-in 0.5s 1 normal;
+    animation: bgFlightHover 0.3s ease-in 0.5s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .app .inner .bg-flight.hover.unhover {
+    opacity: 1;
+    -webkit-animation: bgFlightUnHover 0.3s ease-in 0s 1 normal;
+    -moz-animation: bgFlightUnHover 0.3s ease-in 0s 1 normal;
+    -o-animation: bgFlightUnHover 0.3s ease-in 0s 1 normal;
+    animation: bgFlightUnHover 0.3s ease-in 0s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .app .inner .flight-path {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    color: #fff;
+    font-size: 55px;
+    left: -205px;
+    top: 220px;
+    width: 200px;
+    height: 250px;
+}
+.content .c-function ul li .app .inner .flight-path i {
+    position: absolute;
+    right: -5px;
+    top: 0;
+}
+.content .c-function ul li .app .inner .flight-path p {
+    font-size: 16px;
+    margin-top: 110px;
+    margin-left: 20px;
+    width: 185px;
+    line-height: 30px;
+}
+.content .c-function ul li .app .inner .flight-path.hover {
+    z-index: 4;
+    -webkit-animation: flightPath 0.3s ease-in 0.8s 1 normal;
+    -moz-animation: flightPath 0.3s ease-in 0.8s 1 normal;
+    -o-animation: flightPath 0.3s ease-in 0.8s 1 normal;
+    animation: flightPath 0.3s ease-in 0.8s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .app .inner .bg-word {
+    display: none\0;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    margin: 140px 35px 35px 35px;
+    line-height: 30px;
+    color: #fff;
+}
+:root .content .c-function ul li .app .inner .bg-word {
+    display: block;
+}
+.content .c-function ul li .app .inner .bg-word.hover {
+    -webkit-animation: bgWord 0.6s ease-in 0.8s 1 normal;
+    -moz-animation: bgWord 0.6s ease-in 0.8s 1 normal;
+    -o-animation: bgWord 0.6s ease-in 0.8s 1 normal;
+    animation: bgWord 0.6s ease-in 0.8s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .app:hover .inner .bg-app {
+    opacity: 1;
+}
+.content .c-function ul li .data {
+    width: 248px;
+    height: 312px;
+    background-color: #e6e6e6;
+    position: relative;
+}
+.content .c-function ul li .data .front {
+    width: 230px;
+    height: 296px;
+    position: absolute;
+    margin: 8px;
+    background: #f4f5f5;
+    z-index: 1;
+    text-align: center;
+}
+.content .c-function ul li .data .front h2 {
+    font-weight: normal;
+    margin-top: 180px;
+}
+.content .c-function ul li .data .front p {
+    margin-top: 20px;
+    color: #bfbfbf;
+}
+.content .c-function ul li .data .chart {
+    display: none\0;
+    position: absolute;
+    width: 248px;
+    height: 312px;
+    z-index: 2;
+}
+:root .content .c-function ul li .data .chart {
+    display: block;
+}
+.content .c-function ul li .data .chart .part1 {
+    width: 0;
+    height: 78px;
+    background: url("../img/bg_data_1.jpg") no-repeat;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+.content .c-function ul li .data .chart .part2 {
+    width: 0;
+    height: 78px;
+    background: url("../img/bg_data_2.jpg") no-repeat;
+    -webkit-transition: all 0.3s ease-in 0.075s;
+    -moz-transition: all 0.3s ease-in 0.075s;
+    -o-transition: all 0.3s ease-in 0.075s;
+    transition: all 0.3s ease-in 0.075s;
+}
+.content .c-function ul li .data .chart .part3 {
+    width: 0;
+    height: 78px;
+    background: url("../img/bg_data_3.jpg") no-repeat;
+    -webkit-transition: all 0.3s ease-in 0.15s;
+    -moz-transition: all 0.3s ease-in 0.15s;
+    -o-transition: all 0.3s ease-in 0.15s;
+    transition: all 0.3s ease-in 0.15s;
+}
+.content .c-function ul li .data .chart .part4 {
+    width: 0;
+    height: 78px;
+    background: url("../img/bg_data_4.jpg") no-repeat;
+    -webkit-transition: all 0.3s ease-in 0.225s;
+    -moz-transition: all 0.3s ease-in 0.225s;
+    -o-transition: all 0.3s ease-in 0.225s;
+    transition: all 0.3s ease-in 0.225s;
+}
+.content .c-function ul li .data .data-word {
+    display: none\0;
+    z-index: 3;
+    position: absolute;
+    opacity: 0;
+    margin: 130px 30px 30px 30px;
+    line-height: 30px;
+    color: #fff;
+}
+:root .content .c-function ul li .data .data-word {
+    display: block;
+}
+.content .c-function ul li .data .data-word.hover {
+    -webkit-animation: bgWord 0.2s ease-in 0.525s 1 normal;
+    -moz-animation: bgWord 0.2s ease-in 0.525s 1 normal;
+    -o-animation: bgWord 0.2s ease-in 0.525s 1 normal;
+    animation: bgWord 0.2s ease-in 0.525s 1 normal;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content .c-function ul li .data i {
+    display: block;
+    position: absolute;
+    z-index: 4;
+    font-size: 55px;
+    color: #525252;
+    width: 100%;
+    text-align: center;
+    top: 75px;
+    -webkit-transition: all 0.525s ease-in;
+    -moz-transition: all 0.525s ease-in;
+    -o-transition: all 0.525s ease-in;
+    transition: all 0.525s ease-in;
+}
+.content .c-function ul li .data:hover .chart .part1,
+.content .c-function ul li .data:hover .chart .part2,
+.content .c-function ul li .data:hover .chart .part3,
+.content .c-function ul li .data:hover .chart .part4 {
+    width: 248px;
+}
+.content .c-function ul li .data:hover i {
+    color: #9dacc2;
+    color: #525252\0;
+    top: 40px;
+    top: 75px\0;
+}
+:root .content .c-function ul li .data:hover i {
+    color: #9dacc2;
+    top: 40px;
+}

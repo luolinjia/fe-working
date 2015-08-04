@@ -1,0 +1,253 @@
+@-webkit-keyframes flightPath {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(215px, -200px, 0px);
+        -moz-transform: translate3d(215px, -200px, 0px);
+        -o-transform: translate3d(215px, -200px, 0px);
+        transform: translate3d(215px, -200px, 0px);
+    }
+}
+@-moz-keyframes flightPath {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(215px, -200px, 0px);
+        -moz-transform: translate3d(215px, -200px, 0px);
+        -o-transform: translate3d(215px, -200px, 0px);
+        transform: translate3d(215px, -200px, 0px);
+    }
+}
+@-o-keyframes flightPath {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(215px, -200px, 0px);
+        -moz-transform: translate3d(215px, -200px, 0px);
+        -o-transform: translate3d(215px, -200px, 0px);
+        transform: translate3d(215px, -200px, 0px);
+    }
+}
+@keyframes flightPath {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(215px, -200px, 0px);
+        -moz-transform: translate3d(215px, -200px, 0px);
+        -o-transform: translate3d(215px, -200px, 0px);
+        transform: translate3d(215px, -200px, 0px);
+    }
+}
+
+@-webkit-keyframes bgApp {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(150px, -150px, 0px);
+        -moz-transform: translate3d(150px, -150px, 0px);
+        -o-transform: translate3d(150px, -150px, 0px);
+        transform: translate3d(150px, -150px, 0px);
+    }
+}
+@-moz-keyframes bgApp {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(150px, -150px, 0px);
+        -moz-transform: translate3d(150px, -150px, 0px);
+        -o-transform: translate3d(150px, -150px, 0px);
+        transform: translate3d(150px, -150px, 0px);
+    }
+}
+@-o-keyframes bgApp {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(150px, -150px, 0px);
+        -moz-transform: translate3d(150px, -150px, 0px);
+        -o-transform: translate3d(150px, -150px, 0px);
+        transform: translate3d(150px, -150px, 0px);
+    }
+}
+@keyframes bgApp {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        -webkit-transform: translate3d(150px, -150px, 0px);
+        -moz-transform: translate3d(150px, -150px, 0px);
+        -o-transform: translate3d(150px, -150px, 0px);
+        transform: translate3d(150px, -150px, 0px);
+    }
+}
+
+@-webkit-keyframes bgFlightHover {
+    0% {
+        background-position: -248px 0;
+        opacity: 1;
+    }
+    100% {
+        background-position: 248px 0;
+        opacity: 1;
+    }
+}
+@-moz-keyframes bgFlightHover {
+    0% {
+        background-position: -248px 0;
+        opacity: 1;
+    }
+    100% {
+        background-position: 248px 0;
+        opacity: 1;
+    }
+}
+@-o-keyframes bgFlightHover {
+    0% {
+        background-position: -248px 0;
+        opacity: 1;
+    }
+    100% {
+        background-position: 248px 0;
+        opacity: 1;
+    }
+}
+@keyframes bgFlightHover {
+    0% {
+        background-position: -248px 0;
+        opacity: 1;
+    }
+    100% {
+        background-position: 248px 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes bgFlightUnHover {
+    0% {
+        background-position: 248px 0;
+    }
+    100% {
+        background-position: -248px 0;
+    }
+}
+@-moz-keyframes bgFlightUnHover {
+    0% {
+        background-position: 248px 0;
+    }
+    100% {
+        background-position: -248px 0;
+    }
+}
+@-o-keyframes bgFlightUnHover {
+    0% {
+        background-position: 248px 0;
+    }
+    100% {
+        background-position: -248px 0;
+    }
+}
+@keyframes bgFlightUnHover {
+    0% {
+        background-position: 248px 0;
+    }
+    100% {
+        background-position: -248px 0;
+    }
+}
+
+@-webkit-keyframes bgWord {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes bgWord {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes bgWord {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes bgWord {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes frontOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes frontOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes frontOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes frontOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
