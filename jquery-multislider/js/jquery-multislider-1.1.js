@@ -91,7 +91,7 @@
                     var list = [];
                     for (var i = 0, size = qty; i < size; i++) {
                         var item = settings.banners[i], mBanner = typeof(item['name']) === 'string' ? item['name'] : item['name']['step1'];
-                        list.push('<div class="outer"><div class="inner">' + (settings.aBack ? '<img src="' + mBanner + '" alt=""/>' : '<a href="' + item.link + '"><img src="' + mBanner + '" alt=""/></a>') + '</div>' + (settings.aBack ? '<a href="' + item.link + '" class="inner-slider"><div class="inner-slider-img"><img src="' + item['name']['step2'] + '" /></div><button>' + item['name']['step2label'] + '</button></a><div class="inner-line"><img src="' + item['name']['step3'] + '" alt=""/></div>' : '') + '</div>');
+                        list.push('<div class="outer"><div class="inner">' + (settings.aBack ? '<img src="' + mBanner + '" alt=""/>' : '<a href="' + item.link + '"><img src="' + mBanner + '" alt=""/></a>') + '</div>' + (settings.aBack ? '<a href="' + item.link + '" class="inner-slider"><div class="inner-slider-img"><img src="' + item['name']['step2'] + '" /></div><button>' + item['name']['step2label'] + '</button></a>' + (item['name']['step3'] !== undefined && item['name']['step3'] !== '' ? '<div class="inner-line"><img src="' + item['name']['step3'] + '" alt=""/></div>' : '') + ' + ' : '') + '</div>');
                     }
                     o.append(list.join(''));
                 },

@@ -4,6 +4,11 @@
 
 [Demo](http://luolinjia.com/fe-working/jquery-multislider/)
 
+## 1.2 
+
+- Enhance the effect regarding display step for every step, as it to say: you can remove or replace the step3 with some values, such as **''**, **null**, **undefined**.
+
+
 ## 1.1 
 
 - Fix the centering about banner images.(No matter whether it's zooming in or zooming out)
