@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Monaco, Consolas, "Lucida Console", monospace, sans-serif;
+}
+.menu {
+    height: 80px;
+    background-color: rgba(51, 0, 51, 0.30);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    display: none;
+    text-align: center;
+    color: #f0f0f0;
+    line-height: 80px;
+}
+.menu a {
+    position: absolute;
+    left: 0;
+}
+
+#fullpage {
+
+}
+
+.section {
+    text-align: center;
+    color: #FFFFCC;
+}
+.section.main {
+
+}
+.section.sliders {
+
+}
+.section .fp-controlArrow {
+    border-style: none;
+    font-size: 50px;
+}
+.section .fp-controlArrow.fp-next {
+    right: 80px;
+}
+.section.sliders .slide.no1 {
+    background-color: #339999;
+}
+.section.sliders .slide.no2 {
+    background-color: #33CC99;
+}
+.section.sliders .slide.no3 {
+    background-color: #66FF99;
+}
+.section.sliders .slide.no4 {
+    background-color: #66FFFF;
+}
+.section.product {
+
+}
+.section.detail {
+
+}
+.section.others {
+
+}
+.section.footer {
+    height: 200px!important;
+}
+.section.footer .fp-tableCell {
+    height: 200px!important;
+}
