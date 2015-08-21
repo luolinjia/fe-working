@@ -3,11 +3,86 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>My private zone</title>
+    <style>
+        body {
+            background-color: #f7e8e9;
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            position: fixed;
+            width: 100%;
+            line-height: 80px;
+            padding-left: 2em;
+            padding-top: 2em;
+            background-color: #f7e8e9;
+            z-index: 10;
+        }
+        .global {
+            padding: 100px 50px;
+        }
+        .global ul li {
+            float: left;
+            margin-right: 40px;
+            list-style-type: none;
+            font-size: 30px;
+            color: #999966;
+            width: 300px;
+            height: 300px;
+            -webkit-transition: all .4s ease-in;
+            -moz-transition: all .4s ease-in;
+            -ms-transition: all .4s ease-in;
+            -o-transition: all .4s ease-in;
+            transition: all .4s ease-in;
+        }
+        .global ul li a, .global ul li p {
+            color: #999966;
+            font-family: "Georgia", serif;
+            text-decoration: none;
+            -webkit-transition: all .2s ease-in;
+            -moz-transition: all .2s ease-in;
+            -ms-transition: all .2s ease-in;
+            -o-transition: all .2s ease-in;
+            transition: all .2s ease-in;
+        }
+        .global ul li:hover a {
+            color: #127F78;
+            border-bottom: 2px solid #127F78;
+            border-top: 2px solid #127F78;
+        }
+        .global ul li p {
+            opacity: 0;
+        }
+        .global ul li:hover p {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-<a href="/fe-working/CSS3-OneNET">CSS3 card effects</a>
-<a href="/fe-working/jquery-multislider">MultiSlider Index page</a>
-<a href="/fe-working/Mooxe-MainPage">Mooxe MainPage</a>
+
+<div class="nav">
+    <img src="fe-images/project.png" alt=""/>
+</div>
+
+<div class="global">
+    <ul>
+        <li>
+            <a href="/fe-working/CSS3-OneNET">CSS3 card effects</a>
+            <p>Some CSS3 effects regarding flipping the cards</p>
+        </li>
+        <li>
+            <a href="/fe-working/jquery-multislider">MultiSlider</a>
+            <p>Show the sliders by zooming in and rolling from one side to the other side.</p>
+        </li>
+        <li>
+            <a href="/fe-working/Mooxe-MainPage">Mooxe MainPage</a>
+            <p>Design the Mooxe main page by the fullpage.js</p>
+        </li>
+    </ul>
+</div>
+
+
+
 
 </body>
 </html>
