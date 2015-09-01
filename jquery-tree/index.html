@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Tree</title>
+    <link rel="stylesheet" href="css/all.css"/>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        a {
+            color: #4a9de8;
+            text-decoration: none;
+        }
+        a.closed {
+
+        }
+        ul {
+            /*-webkit-transition: all .2s ease-in;*/
+            /*-moz-transition: all .2s ease-in;*/
+            /*-ms-transition: all .2s ease-in;*/
+            /*-o-transition: all .2s ease-in;*/
+            /*transition: all .2s ease-in;*/
+        }
+        ul.closed {
+            /*display: none;*/
+        }
+        li.selected {
+            /*background-color: #e6e6e6;*/
+        }
+        li.selected a {
+
+        }
+        li.selected > div {
+            /*background-color: #e6e6e6;*/
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+
+<div class="all">
+    <ul>
+        <li>
+            <div>
+                <a href="#" class="icon-keyboard_arrow_down"></a>
+                <span>Vendor A</span>
+            </div>
+            <ul>
+                <li>
+                    <div>
+                        <a href="#" class="icon-keyboard_arrow_down"></a>
+                        <span>Vendor AA</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <div><span>Operator AA01</span></div>
+                        </li>
+                        <li>
+                            <div><span>Operator AA02</span></div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div><span>Operator A1</span></div>
+                </li>
+                <li>
+                    <div><span>Operator A2</span></div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div>
+                <a href="#" class="icon-keyboard_arrow_down"></a>
+                <span>Vendor B</span>
+            </div>
+            <ul>
+                <li>
+                    <div>
+                        <a href="#" class="icon-keyboard_arrow_down"></a>
+                        <span>Vendor BB</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <div><span>Operator BB01</span></div>
+                        </li>
+                        <li>
+                            <div><span>Operator BB02</span></div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div><span>Operator B1</span></div>
+                </li>
+                <li>
+                    <div><span>Operator B2</span></div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div>
+                <a href="#" class="icon-keyboard_arrow_down"></a>
+                <span>Vendor C</span>
+            </div>
+            <ul>
+                <li>
+                    <div>
+                        <a href="#" class="icon-keyboard_arrow_down"></a>
+                        <span>Vendor CC</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <div><span>Operator CC01</span></div>
+                        </li>
+                        <li>
+                            <div><span>Operator CC02</span></div>
+                        </li>
+                        <li>
+                            <div><span>Operator CC02</span></div>
+                        </li>
+                        <li>
+                            <div><span>Operator CC02</span></div>
+                        </li>
+                        <li>
+                            <div><span>Operator CC02</span></div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div><span>Operator C1</span></div>
+                </li>
+                <li>
+                    <div><span>Operator C2</span></div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div id="xx"></div>
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    var data = [{
+        id: '1',
+        label: 'Vendor A',
+        children: [{
+            id: '2',
+            label: 'Vendor AA',
+            children: [{
+                id: '3',
+                label: 'Operator AA01',
+                link: 'http://xx.com'
+            }, {
+                id: '3',
+                label: 'Operator AA02',
+                link: 'http://xx.com'
+            }]
+        }, {
+            id: '4',
+            label: 'Vendor AB',
+            children: [{
+                id: '5',
+                label: 'Operator AB01',
+                link: 'http://xx.com'
+            }]
+        }, {
+            id: '6',
+            label: 'Operator A1',
+            link: 'http://xx.com'
+        }, {
+            id: '7',
+            label: 'Operator A2',
+            link: 'http://xx.com'
+        }]
+    }, {
+        id: '1',
+        label: 'Vendor B',
+        children: [{
+            id: '2',
+            label: 'Vendor BA',
+            children: [{
+                id: '3',
+                label: 'Operator BA01',
+                link: 'http://xx.com'
+            }]
+        }, {
+            id: '4',
+            label: 'Vendor BB',
+            children: [{
+                id: '5',
+                label: 'Operator BB01',
+                link: 'http://xx.com'
+            }]
+        }, {
+            id: '6',
+            label: 'Operator B1',
+            link: 'http://xx.com'
+        }, {
+            id: '7',
+            label: 'Operator B2',
+            link: 'http://xx.com'
+        }]
+    }, {
+        id: '1',
+        label: 'Vendor C',
+        children: [{
+            id: '2',
+            label: 'Vendor CA',
+            children: [{
+                id: '3',
+                label: 'Operator CA01',
+                link: 'http://xx.com'
+            }]
+        }, {
+            id: '4',
+            label: 'Vendor CB',
+            children: [{
+                id: '5',
+                label: 'Operator CB01',
+                link: 'http://xx.com'
+            }]
+        }, {
+            id: '6',
+            label: 'Operator C1',
+            link: 'http://xx.com'
+        }, {
+            id: '7',
+            label: 'Operator C2',
+            link: 'http://xx.com'
+        }]
+    }];
+
+    $(function () {
+
+        var renderEachLayout = function (data) {
+            var  list = [];
+            list.push('<ul>');
+            var i = 0, size = data.length;
+            for (; i < size; i++) {
+                var item = data[i], dom = '';
+                if (undefined !== item.children) {
+                    dom = '<li><div><a href="#" class="icon-keyboard_arrow_down"></a><a>' + item['label'] + '</a></div>' + renderEachLayout(item.children) + '</li>';
+                } else {
+                    dom = '<li><div><a href="' + item['link'] + '">' + item['label'] + '</a></div></li>';
+                }
+                list.push(dom);
+            }
+            list.push('</ul>');
+            return list.join('');
+        };
+
+        var alldom = renderEachLayout(data);
+        $('#xx').append(alldom);
+
+        $('a').on('click', function () {
+            var thiz = $(this);
+            if (thiz.hasClass('closed')) {
+                thiz.removeClass('closed icon-keyboard_arrow_right').addClass('icon-keyboard_arrow_down').parent().siblings('ul').removeClass('closed').slideDown(200);
+            } else {
+                thiz.removeClass('icon-keyboard_arrow_down').addClass('closed icon-keyboard_arrow_right').parent().siblings('ul').addClass('closed').slideUp(200);
+            }
+        });
+        $('li').on('click', function (e) {
+            e.stopPropagation();
+            var thiz = $(this);
+            if (thiz.hasClass('selected')) {
+                thiz.removeClass('selected');
+            } else {
+                $('.all').find('li').removeClass('selected');
+                thiz.addClass('selected');
+            }
+        });
+    });
+</script>
+</body>
+</html>
