@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>select</title>
+    <link rel="stylesheet" href="css/all.css"/>
+    <link rel="stylesheet" href="css/iselect.css"/>
+    <style>
+
+        #xx, #yy {
+            float: left;
+        }
+        #xx {
+            width: 200px;
+        }
+        #yy {
+            width: 300px;
+        }
+        .test {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        <select name="xx" id="xx">
+            <option value="1">oo</option>
+            <option value="2">xx</option>
+            <option value="3">ooxx</option>
+        </select>
+    </div>
+    <div class="test">
+        <select name="yy" id="yy">
+            <option value="1">oo</option>
+            <option value="2" selected="selected">xx</option>
+            <option value="3">ooxx</option>
+        </select>
+    </div>
+
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery-iselect.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('select').iselect();
+//            var funs = {
+//                init: function () {
+//                    var $select = $('#xx');
+//                    var $select2 = $('#yy');
+//                    funs.wrapSelect($select);
+//                    funs.wrapSelect($select2);
+//                },
+//                wrapSelect: function (self) {
+//                    // get the select value
+//                    var selectList = $('option', self).map(function () {
+//                        var thiz = $(this), _key = thiz.attr('value'), _val = thiz.text();
+//                        return _key + '_*' + _val;
+//                    }), i = 0, size = selectList.length, list = [], defaultVal = '';
+//
+//                    for (; i < size; i++) {
+//                        var item = selectList[i].split('_*'), key = item[0], val = item[1];
+//                        if (i === 0) {
+//                            defaultVal = val;
+//                        }
+//                        list.push('<li data-val="' + key + '" ' + (i === 0 ? 'selected' : '') + '>' + val + '</li>');
+//                    }
+//
+//                    self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="icon-keyboard_arrow_down"></i><ul>' + list.join('') + '</ul>');
+//                    funs.bindEvents(self.parent());
+//                },
+//                bindEvents: function (self) {
+//                    var lis = $('li', self), $select = $('select', self);
+//                    // set default value for the select
+//                    $(lis[0]).addClass('selected');
+//                    $select.find('option:first').attr('selected', 'selected');
+//                    self.hover(function () {
+//                        $(this).find('ul').slideDown(200);
+//                    }, function () {
+//                        $(this).find('ul').slideUp(200);
+//                    });
+//                    lis.on('click', function () {
+//                        var thiz = $(this), key = thiz.attr('data-val'), value = thiz.text();
+//                        $('span', self).text(value);
+//                        lis.removeClass('selected');
+//                        thiz.addClass('selected');
+//                        $select.find('option').removeAttr('selected');
+//                        $select.val(key).find('option[value="' + key + '"]').attr('selected', 'selected');
+//                    });
+//                }
+//            };
+//            funs.init();
+        });
+
+    </script>
+</body>
+</html>

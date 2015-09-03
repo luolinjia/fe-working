@@ -1,0 +1,47 @@
+.i-select ul {
+    border-radius: 15px;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #57647b;
+    width: 100%;
+    display: none;
+}
+.i-select ul li {
+    list-style-type: none;
+    line-height: 30px;
+    color: #b6c0d1;
+    border-radius: 10px;
+    margin: 5px 15px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.i-select ul li:hover {
+    background-color: #37445b;
+    color: #fff;
+}
+.i-select ul li.selected {
+    background-color: #37445b;
+    color: #fff;
+}
+.i-select {
+    border: 1px solid #999;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    border-radius: 15px;
+    display: inline-block;
+}
+.i-select span {
+    margin-left: 15px;
+}
+.i-select i {
+    position: absolute;
+    right: 5px;
+    line-height: 30px;
+}
+.for-select {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
