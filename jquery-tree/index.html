@@ -238,9 +238,8 @@
     $(function () {
 
         var renderEachLayout = function (data) {
-            var  list = [];
+            var  list = [], i = 0, size = data.length;
             list.push('<ul>');
-            var i = 0, size = data.length;
             for (; i < size; i++) {
                 var item = data[i], dom = '';
                 if (undefined !== item.children) {
