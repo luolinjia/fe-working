@@ -13,7 +13,7 @@
  *
  **/
 (function($){
-	$.fn.iselect = function (options) {
+    $.fn.iselect = function (options) {
 		var $input = $(this),
 			settings = {
 				icon: 'icon-keyboard_arrow_down'
@@ -81,7 +81,7 @@
 				}
 			};
 
-		settings = $.extend(settings, options);
-		_.init();
-	};
+        settings = $.extend(settings, options);
+        _.init();
+    };
 })(jQuery);

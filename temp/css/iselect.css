@@ -7,7 +7,7 @@
     line-height: 30px;
     position: relative;
     border-radius: 15px;
-    /*display: inline-block;*//*there is no left label => enable*/
+    /*display: inline-block;*/
 }
 .i-select ul {
     border-radius: 15px;
@@ -16,6 +16,8 @@
     background-color: #57647b;
     width: 100%;
     display: none;
+    z-index: 1;
+    position: absolute;
 }
 .i-select ul li {
     list-style-type: none;

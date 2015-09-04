@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>select</title>
+    <link rel="stylesheet" href="css/all.css"/>
+    <link rel="stylesheet" href="css/iselect.css"/>
+    <link rel="stylesheet" href="css/square/green.css"/>
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css"/>
+    <style>
+        body {
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+        .fl {
+            float: left;
+            display: inline;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+        .clearfix:before, .clearfix:after {
+            display: table;
+            content: "";
+            line-height: 0
+        }
+        .clearfix:after {
+            clear: both
+        }
+        .content {
+            width: 1000px;
+            background-color: #fff;
+            padding: 45px 35px;
+        }
+        .content .c-select-group {
+            margin-bottom: 30px;
+        }
+        .content .c-selector {
+            float: left;
+            margin-right: 20px;
+            line-height: 30px;
+        }
+        .content .c-selector select {
+            width: 120px;
+        }
+        .content .c-check-group label {
+            margin-left: 10px;
+            cursor: pointer;
+            line-height: 35px;
+            font-size: 14px;
+            margin-right: 45px;
+        }
+        .content .c-check-group label.special {
+            margin-right: 60px;
+        }
+        .c-check-group .wave {
+            width: 350px;
+        }
+        .c-check-group .peak, .c-check-group .voltage, .c-check-group .leakage {
+            width: 150px;
+            border-left: 1px solid #eaeaea;
+            padding-left: 40px;
+        }
+        .c-check-group .simple-check > span {
+            color: #999;
+        }
+        .c-check-group .simple-check.highlight > span {
+            color: #000;
+        }
+        .c-date-group {
+            margin-top: 30px;
+        }
+        .c-date-group label {
+            line-height: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .c-date-group input {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #999;
+            border-radius: 15px;
+            padding-left: 10px;
+        }
+        .c-date-group i {
+            position: relative;
+            left: -30px;
+            top: 2px;
+        }
+        .c-date-group .btn-group button {
+            height: 30px;
+            background-color: #f3f3f3;
+            border: 1px solid #d6d6d6;
+            border-radius: 15px;
+            width: 80px;
+            color: #000;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .c-date-group .btn-group button.blue {
+            background-color: #3b9cfc;
+            border: 1px solid #3b9cfc;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <form>
+        <div class="c-select-group clearfix">
+            <div class="c-selector">
+                选择用户
+                <select name="user" id="user">
+                    <option value="user1">user1</option>
+                    <option value="user2">user2</option>
+                    <option value="user3">user3</option>
+                    <option value="user4">user4</option>
+                </select>
+            </div>
+            <div class="c-selector">
+                选择设备
+                <select name="device" id="device">
+                    <option value="device1">device1</option>
+                    <option value="device2">device2</option>
+                    <option value="device3">device3</option>
+                    <option value="device4">device4</option>
+                    <option value="device5">device5</option>
+                </select>
+            </div>
+        </div>
+        <div class="c-check-group clearfix">
+            <div class="simple-check fl wave highlight">
+                <div class="c-s-radio">
+                    <input type="radio" name="detailThunder" id="rWave" checked/><label for="rWave">波形雷电流</label>
+                </div>
+                <span><input type="checkbox" name="cbWave" id="cbWaveThunder"/><label for="cbWaveThunder">雷电流波型</label></span>
+                <span><input type="checkbox" name="cbWave" id="cbWavePower"/><label for="cbWavePower">雷电记录能量值</label></span>
+                <span><input type="checkbox" name="cbWave" id="cbWaveCurrent"/><label class="special" for="cbWaveCurrent">峰值电流</label></span>
+                <span><input type="checkbox" name="cbWave" id="cbWaveTime"/><label for="cbWaveTime">雷击时间</label></span>
+            </div>
+            <div class="simple-check fl peak">
+                <div class="c-s-radio">
+                    <input type="radio" name="detailThunder" id="rPeak"/><label for="rPeak">峰值雷电流</label>
+                </div>
+                <span><input type="checkbox" name="cbPeak" id="cbPeakCurrent"/><label for="cbPeakCurrent">峰值电流</label></span>
+                <span><input type="checkbox" name="cbPeak" id="cbPeakTime"/><label for="cbPeakTime">雷击时间</label></span>
+            </div>
+            <div class="simple-check fl voltage">
+                <div class="c-s-radio">
+                    <input type="radio" name="detailThunder" id="rVoltage"/><label for="rVoltage">电压</label>
+                </div>
+                <span><input type="checkbox" name="cbVoltage" id="cbVoltageVC"/><label for="cbVoltageVC">交流电压</label></span>
+                <span><input type="checkbox" name="cbVoltage" id="cbVoltagePrevent"/><label for="cbVoltagePrevent">防雷残压</label></span>
+            </div>
+            <div class="simple-check fl leakage">
+                <div class="c-s-radio">
+                    <input type="radio" name="detailThunder" id="rLeakage"/><label for="rLeakage">漏电流</label>
+                </div>
+                <span><input type="checkbox" name="cbLeakage" id="cbLeakage"/><label for="cbLeakage">亚敏漏电流</label></span>
+            </div>
+        </div>
+        <div class="c-date-group clearfix">
+            <div class="fl">
+                <label for="startDate">开始日期</label>
+                <input type="text" id="startDate"/>
+                <i class="icon-calendar"></i>
+            </div>
+            <div class="fl">
+                <label for="endDate">结束日期</label>
+                <input type="text" id="endDate"/>
+                <i class="icon-calendar"></i>
+            </div>
+            <div class="fl btn-group">
+                <button class="blue">查询</button>
+                <button>导出</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/icheck.min.js" type="text/javascript"></script>
+<script src="js/jquery-iselect.js" type="text/javascript"></script>
+<script src="js/jquery.datetimepicker.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        // set the select by iselect widget
+        $('.c-selector').find('select').iselect({
+            icon: 'icon-arrow_drop_down'
+        });
+
+        // set the checkbox and radio => iCheck
+        $('.c-check-group').find('input').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+            increaseArea: '20%' // optional
+        });
+
+        // init the checkbox status
+        $('input[type="checkbox"]').iCheck('disable');
+        $('.wave.simple-check').find('input[type="checkbox"]').iCheck('enable');
+
+        $('.c-s-radio').find('input').on('ifChecked', function (e) {
+            var thiz = $(this), _parent = thiz.parents('.simple-check');
+            $('input[type="checkbox"]').iCheck('disable');
+            $('.simple-check').removeClass('highlight');
+            _parent.find('input[type="checkbox"]').iCheck('enable');
+            _parent.addClass('highlight');
+        });
+
+        // init the datepicker
+        var $startDate = $('#startDate'), $endDate = $('#endDate');
+
+        $startDate.datetimepicker({
+            format:'Y-m-d',
+            value: new Date(),
+            onShow:function( ct ){
+                this.setOptions({
+                    maxDate:$endDate.val()?$endDate.val():false
+                })
+            },
+            timepicker:false
+        });
+        $endDate.datetimepicker({
+            format:'Y-m-d',
+            value: new Date(),
+            onShow:function( ct ){
+                this.setOptions({
+                    minDate:$startDate.val()?$startDate.val():false
+                })
+            },
+            timepicker:false
+        });
+
+    });
+
+</script>
+</body>
+</html>
