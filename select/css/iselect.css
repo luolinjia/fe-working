@@ -1,3 +1,12 @@
+.i-select {
+    border: 1px solid #999;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    border-radius: 15px;
+    display: inline-block;
+}
 .i-select ul {
     border-radius: 15px;
     margin: 0;
@@ -22,15 +31,6 @@
 .i-select ul li.selected {
     background-color: #37445b;
     color: #fff;
-}
-.i-select {
-    border: 1px solid #999;
-    width: 120px;
-    height: 30px;
-    line-height: 30px;
-    position: relative;
-    border-radius: 15px;
-    display: inline-block;
 }
 .i-select span {
     margin-left: 15px;

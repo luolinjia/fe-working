@@ -4,7 +4,11 @@
  * @dependence jQuery
  * @createDate 09-03-2015
  * @usage:
- * <div class="all"></div>
+ * <div class="all">
+ * 		<select>...</select>
+ * </div>
+ *
+ * $('select').iselect();
  *
  **/
 (function($){
@@ -71,6 +75,7 @@
 						thiz.addClass('selected');
 						$select.find('option').removeAttr('selected');
 						$select.val(key).find('option[value="' + key + '"]').attr('selected', 'selected');
+						thiz.parent().fadeOut(100);
 					});
 				}
 			};
