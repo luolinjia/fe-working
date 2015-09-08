@@ -45,6 +45,7 @@
     line-height: 30px;
 }
 .for-select {
+    display: none;
     opacity: 0;
     position: absolute;
     top: 0;

@@ -16,7 +16,8 @@
 	$.fn.iselect = function (options) {
 		var $input = $(this),
 			settings = {
-				icon: 'icon-keyboard_arrow_down'
+				icon: 'icon-keyboard_arrow_down',
+				hasRedirect: false
 			}, _ = {
 				init: function () {
 					var i = 0, size = $input.length;
@@ -27,12 +28,12 @@
 				wrapSelect: function (self) {
 					// get the select value
 					var selectList = $('option', self).map(function () {
-						var thiz = $(this), _key = thiz.attr('value'), _val = thiz.text(), _isSelected = !!thiz.attr('selected');
-						return _key + '_*' + _val + '_*' + _isSelected;
+						var thiz = $(this), _key = thiz.attr('value'), _url = thiz.attr('data-url'), _val = thiz.text(), _isSelected = !!thiz.attr('selected');
+						return _key + '_*' + _url + '_*' + _val + '_*' + _isSelected;
 					}), i = 0, size = selectList.length, list = [], defaultKey = '', defaultVal = '';
 
 					for (; i < size; i++) {
-						var item = selectList[i].split('_*'), key = item[0], val = item[1], isSelected = item[2];
+						var item = selectList[i].split('_*'), key = item[0], url = item[1], val = item[2], isSelected = item[3];
 						if ('true' === isSelected) {
 							defaultKey = key;
 							defaultVal = val;
@@ -41,7 +42,7 @@
 								defaultVal = val;
 							}
 						}
-						list.push('<li data-val="' + key + '" ' + (isSelected ? 'selected' : '') + '>' + val + '</li>');
+						list.push('<li data-val="' + key + '" ' + ('true' === isSelected ? 'selected' : '') + '><a href="' + (url ? url : 'javascript:;') + '">' + val + '</a></li>');
 					}
 
 					self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="' + settings.icon + '"></i><ul>' + list.join('') + '</ul>');
