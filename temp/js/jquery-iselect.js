@@ -42,7 +42,7 @@
 								defaultVal = val;
 							}
 						}
-						list.push('<li data-val="' + key + '" ' + ('true' === isSelected ? 'selected' : '') + '><a href="' + (url ? url : 'javascript:;') + '">' + val + '</a></li>');
+						list.push('<li data-val="' + key + '" ' + ('true' === isSelected ? 'selected' : '') + '><a href="' + ('undefined' !== url ? url : 'javascript:;') + '">' + val + '</a></li>');
 					}
 
 					self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="' + settings.icon + '"></i><ul>' + list.join('') + '</ul>');
@@ -54,9 +54,9 @@
 					var lis = $('li', self), $select = $('select', self);
 
 					self.hover(function () {
-						$(this).find('ul').slideDown(200);
+						$(this).find('ul').stop().slideDown(200);
 					}, function () {
-						$(this).find('ul').slideUp(200);
+						$(this).find('ul').stop().slideUp(200);
 					});
 
 					// set default value for the select
