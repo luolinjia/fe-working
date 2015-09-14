@@ -17,7 +17,13 @@
 		var $input = $(this),
 			settings = {
 				icon: 'icon-keyboard_arrow_down',
-				hasRedirect: false
+				hasRedirect: false,
+				hasSearch: false,
+				searchIcon: '',
+				searchData: {
+					url: '',
+					data: {}
+				}
 			}, _ = {
 				init: function () {
 					var i = 0, size = $input.length;
@@ -45,7 +51,7 @@
 						list.push('<li data-val="' + key + '" ' + ('true' === isSelected ? 'selected' : '') + '><a href="' + ('undefined' !== url ? url : 'javascript:;') + '">' + val + '</a></li>');
 					}
 
-					self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="' + settings.icon + '"></i><ul>' + list.join('') + '</ul>');
+					self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="' + settings.icon + '"></i><ul>' + (settings.hasSearch ? '<div class="search"><input type="text"/>' + (settings.searchIcon === '' ? '' : '<i class="' + settings.icon + '"></i>') + '</div>' : '') + list.join('') + '</ul>');
 					self.addClass('for-select').parent().css('width', self.outerWidth());
 
 					_.bindEvents(self.parent(), defaultKey);

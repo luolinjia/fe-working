@@ -48,3 +48,16 @@
     position: absolute;
     top: 0;
 }
+.search {
+    width: 88%;
+}
+.search input {
+    line-height: 30px;
+    width: 100%;
+    margin: 5px 15px;
+    padding-left: 10px;
+}
+.search i {
+    right: 20px;
+    line-height: 40px;
+}
