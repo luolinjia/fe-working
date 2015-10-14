@@ -61,3 +61,8 @@
     right: 20px;
     line-height: 40px;
 }
+.search-tip {
+    color: #fff;
+    padding-left: 15px;
+    font-size: 14px;
+}

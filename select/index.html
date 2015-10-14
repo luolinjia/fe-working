@@ -43,6 +43,65 @@
             <option value="1">oo</option>
             <option value="2" selected="selected">xx</option>
             <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
+            <option value="3">ooxx</option>
         </select>
     </div>
 
@@ -56,12 +115,19 @@
     </div>
 
     <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
     <script src="js/jquery-iselect.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $('select', $('.test')).iselect({
                 icon: 'icon-keyboard_arrow_down',
-                hasSearch: true
+                hasSearch: true,
+                searchData: {
+                    url: 'data/data.json',
+                    data: {
+                        id: 2
+                    }
+                }
             });
         });
 

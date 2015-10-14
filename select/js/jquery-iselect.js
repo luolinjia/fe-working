@@ -14,7 +14,8 @@
  **/
 (function($){
 	$.fn.iselect = function (options) {
-		var $input = $(this),
+		var o = $(this),
+			initData, cacheData,
 			settings = {
 				icon: 'icon-keyboard_arrow_down',
 				hasRedirect: false,
@@ -24,11 +25,27 @@
 					url: '',
 					data: {}
 				}
+			}, req = {
+				/**
+				 * request the json data from server
+				 * @param {Object} options
+				 * @param {Function} callback
+				 */
+				reqJsonData: function (options, callback) {
+					$.ajax($.extend({
+						type: 'POST',
+						dataType: 'JSON'
+					}, options, true)).done(function(data){
+						if (data && $.isFunction(callback)) {
+							callback(data);
+						}
+					});
+				}
 			}, _ = {
 				init: function () {
-					var i = 0, size = $input.length;
+					var i = 0, size = o.length;
 					for (; i < size; i++) {
-						_.wrapSelect($($input[i]));
+						_.wrapSelect($(o[i]));
 					}
 				},
 				wrapSelect: function (self) {
@@ -57,11 +74,22 @@
 					_.bindEvents(self.parent(), defaultKey);
 				},
 				bindEvents: function (self, defaultKey) {
-					var lis = $('li', self), $select = $('select', self);
+					var lis = $('li', self), $select = $('select', self), $ulHeight = self.find('ul').outerHeight(), setHeight = $ulHeight > 280 ? 280 : $ulHeight;
+
+					settings.hasSearch ? _.bindSearch(self) : '';
+
+					self.find('ul').slimScroll({
+						height: setHeight + 'px',
+						color: '#fff'
+					});
+
+					self.find('.slimScrollDiv').css('height', setHeight + 20).slideUp(10);
 
 					self.hover(function () {
+						$(this).find('.slimScrollDiv').stop().slideDown(200);
 						$(this).find('ul').stop().slideDown(200);
 					}, function () {
+						$(this).find('.slimScrollDiv').stop().slideUp(200);
 						$(this).find('ul').stop().slideUp(200);
 					});
 
@@ -84,6 +112,66 @@
 						$select.find('option').removeAttr('selected');
 						$select.val(key).find('option[value="' + key + '"]').attr('selected', 'selected');
 						thiz.parent().fadeOut(100);
+						thiz.parent().parent().fadeOut(100);
+					});
+				},
+				bindSearch: function (self) {
+					var $search = self.find('.search input'), $ul = $search.parent().parent(), timer, preKeyword = '';
+
+					// save the initData
+					initData = self.find('select');
+
+					$search.on('keyup', function () {
+
+						if ('' === $search.val()) {
+							$ul.find('li.search-li').remove();
+							$ul.find('li').show();
+							return;
+						}
+						if (preKeyword === $search.val()) {}
+
+						var callback = function () {
+							$search.parent().siblings('li').hide();
+							$ul.append('<div class="search-tip">正在搜索...</div>');
+							preKeyword = $search.val();
+							req.reqJsonData({
+								url: settings.searchData.url,
+								data: $.extend({key: preKeyword}, settings.searchData.data, true)
+							}, function (res) {
+								if (res === false) { return; }
+								if (res.code === 0) {
+									var dom = _.renderSearchResult(res['data']);
+									$ul.find('.search-tip').remove();
+									$ul.append(dom);
+									_.bindSearchEvents(self);
+								} else {
+									IOT.showPostError(res['msg']);
+									$ul.find('.search-tip').remove().append(res['msg']);
+								}
+							});
+						};
+
+						timer && clearTimeout(timer);
+						timer = setTimeout(callback, 1500);
+					});
+				},
+				renderSearchResult: function (data) {
+					var i = 0, size = data.length, list = [];
+					for (; i < size; i++) {
+						var item = data[i];
+						list.push('<li class="search-li" data-val="' + item['id'] + '"><a href="javascript:;">' + item['label'] + '</a></li>');
+					}
+					return list.join('');
+				},
+				bindSearchEvents: function (self) {
+					var lis = self.find('li');
+					lis.on('click', function () {
+						var thiz = $(this), id = thiz.attr('data-val'), label = thiz.text();
+						$('span', self).text(label).attr('data-id', id);
+						lis.removeClass('selected');
+						thiz.addClass('selected');
+						thiz.parent().fadeOut(100);
+						thiz.parent().parent().fadeOut(100);
 					});
 				}
 			};
