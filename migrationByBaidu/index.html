@@ -76,11 +76,12 @@
                         backgroundColor: '#1b1b1b',
                         color: ['gold','aqua','lime'],
                         title : {
-                            text: '模拟迁徙',
-                            subtext:'虚拟数据',
+                            text: 'OneNET数据迁徙图',
+                            subtext:'',
                             x:'center',
                             textStyle : {
-                                color: '#fff'
+                                color: '#fff',
+                                fontSize: '30'
                             }
                         },
                         tooltip : {
@@ -97,7 +98,7 @@
                             }
                         },
                         toolbox: {
-                            show : true,
+                            show : false,
                             orient : 'vertical',
                             x: 'right',
                             y: 'center',
@@ -110,7 +111,7 @@
                         },
                         dataRange: {
                             min : 0,
-                            max : 100,
+                            max : 10000,
                             calculable : true,
                             color: ['#ff3333', 'orange', 'yellow','lime','aqua'],
                             textStyle:{
@@ -219,10 +220,20 @@
                                 markPoint : {
                                     symbol:'emptyCircle',
                                     symbolSize : function (v){
-                                        return 10 + v/10
+//                                        return 10 + v/10
+                                        if (v > 10000) {
+                                            return 20
+                                        } else if (v <= 10000 && v > 3000) {
+                                            return 17
+                                        } else if (v <= 3000 && v > 1000) {
+                                            return 14
+                                        } else {
+                                            return 10 + v/300
+                                        }
                                     },
                                     effect : {
-                                        show: true,
+                                        show: false,
+//                                        loop: false,
                                         shadowBlur : 0
                                     },
                                     itemStyle:{
