@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="css/picscroll.css"/>-->
+    <script src="js/jquery-1.10.0.min.js"></script>
+    <script src="js/jquery-picScroll.js"></script>
+    <style>
+        #demo {
+            margin: 0 auto;
+            width: 900px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <div id="testBox">
+            <img src="img/qq.jpg"/>
+            <img src="img/qqqq.jpg"/>
+            <img src="img/qqq.jpg"/>
+            <!--<img src="img/qq.jpg"/>-->
+            <!--<img src="img/qqqq.jpg"/>-->
+            <!--<img src="img/qqq.jpg"/>-->
+            <!--<img src="img/qq.jpg"/>-->
+            <!--<img src="img/qqqq.jpg"/>-->
+            <!--<img src="img/qqq.jpg"/>-->
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $('#testBox').picScroll({
+            size: {height: 230, width: 600},
+            number: 6,
+            time: 2000,
+            hasNumber: false,
+            animation: true
+        });
+    </script>
+</body>
+</html>
