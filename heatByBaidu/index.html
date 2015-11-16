@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>data</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(27, 27, 27);
+        }
+        #main {
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="js/echarts-all.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var cityList = [], noList = [];
+
+            window.onload = function () {
+
+                // 创建一个Socket实例
+                var socket = new WebSocket('ws://192.168.25.1:9502');
+
+                // 打开Socket
+                socket.onopen = function (event) {
+                    // 发送一个初始化消息
+                    socket.send('I am the client and I\'m listening!');
+
+                    // 监听消息
+                    socket.onmessage = function (event) {
+                        //console.log('Client received a message',event.data);
+                        var data = JSON.parse(event.data);
+                        if (!data) return;
+                        cityList = []; noList = [];
+                        for (var i = 0, size = data.length; i < size; i++) {
+                            cityList.push(data[i].region);
+                            noList.push(data[i].count);
+                        }
+                        setTimeout(function () {
+                            _map.refreshBwOrderData();
+                        }, 0);
+                    };
+
+                    // 监听Socket的关闭
+                    socket.onclose = function (event) {
+                        console.log('Client notified socket has closed', event);
+                    };
+
+                    // 关闭Socket....
+                    //socket.close()
+                };
+            };
+            var myChart,
+                provArray = {
+                    '上海': [121.4648, 31.2891],
+                    '北京': [116.4551, 40.2539],
+                    '重庆': [107.7539, 30.1904],
+                    '天津': [117.4219, 39.4189],
+                    '河北': [115.6614, 38.6138],
+                    '安徽': [117.216005, 31.859252],
+                    '福建': [117.984943, 26.050118],
+                    '甘肃': [102.457625, 38.103267],
+                    '广东': [113.394818, 23.408004],
+                    '广西': [108.924274, 23.552255],
+                    '贵州': [106.734996, 26.902826],
+                    '海南': [109.733755, 19.180501],
+                    '河南': [113.486804, 34.157184],
+                    '黑龙江': [128.047414, 47.356592],
+                    '湖北': [112.410562, 31.209316],
+                    '湖南': [111.720664, 27.695864],
+                    '江苏': [119.368489, 33.013797],
+                    '江西': [115.676082, 27.757258],
+                    '吉林': [126.262876, 43.678846],
+                    '辽宁': [122.753592, 41.6216],
+                    '内蒙古': [114.415868, 43.468238],
+                    '宁夏': [106.155481, 37.321323],
+                    '青海': [96.202544, 35.499761],
+                    '山东': [118.527663, 36.09929],
+                    '山西': [112.515496, 37.866566],
+                    '陕西': [109.503789, 35.860026],
+                    '四川': [102.89916, 30.367481],
+                    '西藏': [89.137982, 31.367315],
+                    '新疆': [85.614899, 42.127001],
+                    '云南': [101.592952, 24.864213],
+                    '浙江': [119.957202, 29.159494],
+                    '香港': [114.186124, 22.293586],
+                    '澳门': [113.557519, 22.204118],
+                    '台湾': [120.961454, 23.80406],
+                    '海外': [84.961454, 50.80406]
+                },
+                _map = {
+                    markpoints: [],
+                    preparation: function () {
+                        var $main = $('#main');
+                        $main.css('height', window.innerHeight);
+
+                        setTimeout(function () {
+                            _map.initData();
+                            console.log(_map.markpoints);
+                            _map.init();
+                        }, 5000);
+
+                    },
+                    init: function () {
+                        // 基于准备好的dom，初始化echarts图表
+                        myChart = echarts.init(document.getElementById('main'));
+
+                        var option = {
+                            backgroundColor: '#1b1b1b',
+                            title : {
+                                text: '热力图结合地图',
+                                x:'center',
+                                textStyle: {
+                                    color: 'white'
+                                }
+                            },
+                            tooltip : {
+                                trigger: 'item',
+                                formatter: '{b}'
+                            },
+                            toolbox: {
+                                show : true,
+                                orient : 'vertical',
+                                x: 'right',
+                                y: 'center',
+                                feature : {
+                                    mark : {show: true},
+                                    dataView : {show: true, readOnly: false},
+                                    restore : {show: true},
+                                    saveAsImage : {show: true}
+                                }
+                            },
+                            series : [
+                                {
+                                    name: '北京',
+                                    type: 'map',
+                                    mapType: 'china',
+                                    roam: true,
+                                    hoverable: false,
+                                    data:[],
+                                    heatmap: {
+                                        minAlpha: 0.1,
+                                        data: _map.markpoints
+                                    },
+                                    itemStyle: {
+                                        normal: {
+                                            borderColor:'rgba(100,149,237,0.6)',
+                                            borderWidth:0.5,
+                                            areaStyle: {
+                                                color: '#1b1b1b'
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        };
+
+                        // 为echarts对象加载数据
+                        myChart.setOption(option);
+                    },
+                    initData: function () {
+                        _map.markpoints = [];
+//                        var deadData = [{
+//                            'lng': 115.676082,
+//                            'lat': 27.757258,
+//                            'no': 0.54
+//                        }, {
+//                            'lng': 118.527663,
+//                            'lat': 36.09929,
+//                            'no': 0.24
+//                        }, {
+//                            'lng': 116.4551,
+//                            'lat': 40.2539,
+//                            'no': 0.11
+//                        }];
+//                        if (cityList.length === 0) {
+//                            for (var k = 0, l = deadData.length; k < l; k++) {
+//                                var item = [deadData[k]['lng'], deadData[k]['lat'], deadData['no']];
+//                                _map.markpoints.push(item);
+//                            }
+//                        } else {
+                            for (var i = 0, size = cityList.length; i < size; i++) {
+                                var itemDetail = [provArray[cityList[i]][0], provArray[cityList[i]][1], noList[i]/50];
+                                _map.markpoints.push(itemDetail);
+                            }
+//                        }
+                    },
+                    refreshBwOrderData: function (){
+                        if(!myChart){
+                            return;
+                        }
+                        if (cityList.length === 0) {
+                            return;
+                        }
+
+                        _map.initData();
+
+
+                        //更新数据
+                        var option = myChart.getOption();
+
+                        option.series[0].heatmap['data'] = _map.markpoints;
+                        console.log(_map.markpoints);
+                        console.log(option.series[0].heatmap['data']);
+
+    //                    if (myChart && myChart.dispose) {
+    //                        myChart.dispose();
+    //                    }
+    //
+    //                    myChart = echarts.init(document.getElementById('main'));//重新实例化
+
+                        myChart.setOption(option);
+                    }
+                };
+            _map.preparation();
+        });
+
+    </script>
+</body>
+</html>
