@@ -30277,10 +30277,19 @@ define('zrender/zrender', [
                             geoData = series[i].heatmap._geoData;
                         }
                         var len = data.length;
+                        //console.log(data);
+                        //console.log(data.length);
+                        //console.log('geoData: =>'+geoData);
                         for (var id = 0; id < len; ++id) {
+                            //if(!geoData[id]){
+                            //
+                            //    console.log('geoData', geoData);
+                            //    console.log('id', id);
+                            //}
                             data[id] = this.geo2pos(mapType, [
-                                geoData[id][0],
-                                geoData[id][1]
+
+                                data[id][0],
+                                data[id][1]
                             ]);
                         }
                         var pos = [

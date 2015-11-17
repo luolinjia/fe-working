@@ -28,7 +28,7 @@
             window.onload = function () {
 
                 // 创建一个Socket实例
-                var socket = new WebSocket('ws://192.168.25.1:9502');
+                var socket = new WebSocket('ws://183.230.40.96:9502');
 
                 // 打开Socket
                 socket.onopen = function (event) {
@@ -45,9 +45,7 @@
                             cityList.push(data[i].region);
                             noList.push(data[i].count);
                         }
-                        setTimeout(function () {
-                            _map.refreshBwOrderData();
-                        }, 0);
+                        _map.refreshBwOrderData();
                     };
 
                     // 监听Socket的关闭
@@ -95,7 +93,8 @@
                     '香港': [114.186124, 22.293586],
                     '澳门': [113.557519, 22.204118],
                     '台湾': [120.961454, 23.80406],
-                    '海外': [84.961454, 50.80406]
+                    '海外': [107.7539, 30.1904],
+                    '中国': [107.7539, 30.1904]
                 },
                 _map = {
                     markpoints: [],
@@ -105,7 +104,7 @@
 
                         setTimeout(function () {
                             _map.initData();
-                            console.log(_map.markpoints);
+                            console.log('preparation:' + _map.markpoints);
                             _map.init();
                         }, 5000);
 
@@ -117,10 +116,11 @@
                         var option = {
                             backgroundColor: '#1b1b1b',
                             title : {
-                                text: '热力图结合地图',
+                                text: 'OneNET热力图',
                                 x:'center',
                                 textStyle: {
-                                    color: 'white'
+                                    color: 'white',
+                                    fontSize: '30'
                                 }
                             },
                             tooltip : {
@@ -128,7 +128,7 @@
                                 formatter: '{b}'
                             },
                             toolbox: {
-                                show : true,
+                                show : false,
                                 orient : 'vertical',
                                 x: 'right',
                                 y: 'center',
@@ -148,8 +148,16 @@
                                     hoverable: false,
                                     data:[],
                                     heatmap: {
-                                        minAlpha: 0.1,
-                                        data: _map.markpoints
+//                                        minAlpha: 0.01,
+                                        data: _map.markpoints,
+                                        valueScale: 100
+//                                        gradientColors: ['lime', 'yellow', 'red']
+//                                        gradientColors: [
+//                                            {offset: 0.01, color: 'blue'},
+//                                            {offset: 0.05, color: 'cyan'},
+//                                            {offset: 0.2, color: 'lime'},
+//                                            {offset: 0.3, color: 'yellow'},
+//                                            {offset: 0.5, color: 'red'}]
                                     },
                                     itemStyle: {
                                         normal: {
@@ -189,9 +197,37 @@
 //                            }
 //                        } else {
                             for (var i = 0, size = cityList.length; i < size; i++) {
-                                var itemDetail = [provArray[cityList[i]][0], provArray[cityList[i]][1], noList[i]/50];
-                                _map.markpoints.push(itemDetail);
+
+                                if (!provArray[cityList[i]]) {
+                                    console.log('cityList: ' + cityList);
+                                }
+                                var itemDetailNo = (noList[i] > 20 ? 20 : noList[i]);
+                                console.log('cityList i:' + cityList[i] + 'city pos:' + provArray[cityList[i]][0] + ', ' + provArray[cityList[i]][1] + 'cityNo: => ' + (itemDetailNo/21));
+
+                                for (var k = 0, jSize = itemDetailNo * 2; k < jSize; k++) {
+                                    var itemX = provArray[cityList[i]][0] + Math.random() * 4;
+                                    var itemY = provArray[cityList[i]][1] + Math.random() * 3;
+                                    var itemCnt = 20 * Math.random();
+                                    for (var n = 0; n < itemCnt; ++n) {
+                                        var itemDetail = [itemX - Math.random() * 1.5, itemY - Math.random() * 1.5, itemDetailNo/21];
+                                        _map.markpoints.push(itemDetail);
+                                    }
+
+//                                    _map.markpoints.push(itemDetail);
+                                }
                             }
+                        for (var j = 0; j < 10; ++j) {
+                            var x = 100 + Math.random() * 16;
+                            var y = 24 + Math.random() * 12;
+                            var cnt = 30 * Math.random();
+                            for (var m = 0; m < cnt; ++m) {
+                                _map.markpoints.push([
+                                    x + Math.random() * 2,
+                                    y + Math.random() * 2,
+                                    Math.random()
+                                ]);
+                            }
+                        }
 //                        }
                     },
                     refreshBwOrderData: function (){
@@ -209,8 +245,8 @@
                         var option = myChart.getOption();
 
                         option.series[0].heatmap['data'] = _map.markpoints;
-                        console.log(_map.markpoints);
-                        console.log(option.series[0].heatmap['data']);
+                        console.log('refresh new points:' + _map.markpoints.join('||'));
+//                        console.log('the changed points:' + option.series[0].heatmap['data']);
 
     //                    if (myChart && myChart.dispose) {
     //                        myChart.dispose();
