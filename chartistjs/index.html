@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/chartist.min.css">
+    <style>
+        .my-chart {
+            background-color: #333;
+            height: 500px;
+            width: 750px;
+        }
+        .ct-label {
+            fill: rgba(255,255,255,.8);
+            color: rgba(255,255,255,.8);
+            font-size: .75rem;
+            line-height: 1;
+        }
+        .ct-grid {
+            stroke: rgba(255,255,255,.8);
+            stroke-width: 1px;
+            stroke-dasharray: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="my-chart">
+    <div class="ct-chart ct-perfect-fourth"></div>
+</div>
+<script src="js/chartist.min.js"></script>
+<script type="text/javascript">
+    var data = {
+        // A labels array that can contain any sort of values
+        labels: ['Mon', '', 'Wed', 'Thu', 'Fri'],
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+            [5, 2, 4, 2, 0]
+        ]
+    };
+    var options = {
+        width: 800,
+        height: 300,
+        showPoint: false
+    };
+    // Create a new line chart object where as first parameter we pass in a selector
+    // that is resolving to our chart container element. The Second parameter
+    // is the actual data object.
+    var $chart = new Chartist.Line('.ct-chart', data, options);
+
+    $chart.on('draw', function(data) {
+        if(data.type === 'line' || data.type === 'area') {
+            data.element.animate({
+                d: {
+                    begin: 2000 * data.index,
+                    dur: 1000,
+                    from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                    to: data.path.clone().stringify(),
+                    easing: Chartist.Svg.Easing.easeOutQuint
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
