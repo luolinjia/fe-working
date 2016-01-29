@@ -72,7 +72,7 @@
                         _.renderCSS(itemO);
                         _.renderNavi(itemO, qtys[k]);
                         _.switchPic(itemO, index[k], k);
-                        _.bindHover(itemO, k);
+                        _.bindDotsClick(itemO, k);
                     }
                 },
                 getImgList: function (self, qty) {
@@ -117,7 +117,7 @@
                     }
 
                 },
-                bindHover: function (self, k) {
+                bindDotsClick: function (self, k) {
                     if (qtys[k] > 1) {
                         $('.navis li', self).hover(function () {
                             if (setting.animation) {

@@ -4,6 +4,14 @@
 
 [Demo](http://luolinjia.com/fe-working/jquery-multislider/)
 
+## 1.4
+
+- Add the hover event for the pic when you're holding the related image.
+
+## 1.3
+
+- Add a function regarding the jump for a tag.
+
 ## 1.2 
 
 - Enhance the effect regarding display step for every step, as it to say: you can remove or replace the step3 with some values, such as **''**, **null**, **undefined**.
@@ -13,7 +21,7 @@
 
 - Fix the centering about banner images.(No matter whether it's zooming in or zooming out)
     - **Zoom In**: as browser resolution becomes bigger, you need DIY the outest layer if you want.
-    - **Zoom Out**: as browser resollution becomes smaller, do **Nothing**
+    - **Zoom Out**: as browser resolution becomes smaller, do **Nothing**
 
 ## Usage 1.0
 
