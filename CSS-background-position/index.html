@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test css background position</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 850px;
+        }
+        ul li {
+            float: left;
+        }
+        .show {
+            border: 1px solid #82878c;
+            margin: 30px;
+            width: 200px;
+            height: 68px;
+            background-image: url(img/logo.jpg);
+        }
+        .no-repeat {
+            background-repeat: no-repeat;
+        }
+        .bg-position_-370-253 {
+            background-position: -370px -253px;
+        }
+        .bg-position_52-46 {
+            background-position: 52% 46%;
+        }
+        .bg-position_760-270 {
+            background-position: 760px 270px;
+        }
+        .big {
+            width: 800px;
+            height: 600px;
+        }
+        .big.no-repeat {
+            background-position: 0 0;
+        }
+        b {
+            font-size: 20px;
+        }
+        img {
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<p><b>CSS background position</b></p>
+
+<p>css background-position 属性主要还是根据左上角的顶点为(0, 0);</p>
+<p>向右、下为负数，左、上为正数；</p>
+<p>碰到repeat，可用正数，如为no-repeat，只能用负数</p>
+
+<h2>示例</h2>
+<img src="img/logo.jpg" alt=""/>
+
+<ul>
+    <li>
+        <p>repeat px (760px, 270px)</p>
+        <div class="show bg-position_760-270 big"></div>
+    </li>
+    <li>
+        <p>repeat percentage (52%, 46%)</p>
+        <div class="show bg-position_52-46"></div>
+    </li>
+    <li>
+        <p>repeat -px (-370px, -253px)</p>
+        <div class="show bg-position_-370-253"></div>
+    </li>
+    <li>
+        <p>no repeat px (0, 0)</p>
+        <div class="show no-repeat bg-position_760-270 big"></div>
+    </li>
+    <li>
+        <p>no repeat percentage (52%, 46%)</p>
+        <div class="show no-repeat bg-position_52-46"></div>
+    </li>
+    <li>
+        <p>no repeat -px (-370px, -253px)</p>
+        <div class="show no-repeat bg-position_-370-253"></div>
+    </li>
+
+</ul>
+
+</body>
+</html>
