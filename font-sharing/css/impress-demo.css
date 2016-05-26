@@ -243,103 +243,24 @@ a:focus {
     font-family: 'PT Sans', 'Microsoft YaHei', sans-serif;
 }
 
-#term {
-    font-size: 28px;
-}
+#totalFont {
 
-#term h1 {
+}
+#totalFont .tf-species li {
+    margin: 1em 0;
+}
+#totalFont .eastern-font {
+    font-size: 40px;
     font-weight: bold;
-}
-
-#term ul li {
     list-style-type: disc;
-    margin-left: 45px;
+    margin-left: 1em;
+}
+#totalFont .eastern-font li {
+    margin: 0;
 }
 
-#psyColor p {
-    text-align: center;
-}
-
-#psyColorForWeb .col {
-    float: left;
-    width: 300px;
-    font-size: 20px;
-}
-#psyColorForWeb li {
-    height: 100px;
-    width: 200px;
-    margin-top: 30px;
-}
-#psyColorForWeb li {
-
-}
-
-#colorKey p {
-    font-size: 35px;
-}
-#cssColor {
-    font-family: 'PT Sans', 'Microsoft YaHei', sans-serif;
-}
-
-#defaultColor img {
-    height: 250px;
-}
-#defaultColor li {
-    float: left;
-    margin-left: 30px;
-}
-#simpleColorCircle ul {
-    margin: 30px 0;
-}
-#simpleColorCircle li {
-    list-style-type: disc;
-    margin-left: 45px;
-    font-size: 35px;
-}
-#simpleColorCircle .ps {
-    font-size: 20px;
-}
-#simpleColorCircle p {
-    font-size: 20px;
-}
-
-#displayColor tr td {
-    font-size: 35px;
-    padding: 8px;
-    border: 2px solid #555;
-}
-
-#CSSModuleColor li {
-    list-style-type: disc;
-    margin-left: 45px;
-    font-size: 35px;
-}
-
-#currentColorKey {
-    font-size: 35px;
-}
-#currentColorKey em {
-    font-size: 20px;
-}
-
-#HSLColor p {
-    font-size: 20px;
-}
-#HSLColor img {
-    width: 50%;
-}
-
-#HSLDetail p {
-    font-size: 30px;
-}
-
-#colorRecommend li {
-    list-style-type: disc;
-    margin-left: 45px;
-    font-size: 30px;
-}
-#colorRecommend p {
-    font-size: 30px;
+#westernFont ul {
+    font-size: 60px;
 }
 
 #overview { display: none }
