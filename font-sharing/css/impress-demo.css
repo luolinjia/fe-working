@@ -81,8 +81,10 @@ table {
     And yes, there is a lot of repetition there because of -prefixes but we don't
     want to leave anybody behind.
 */
+
 body {
-    font-family: 'PT Sans', 'Microsoft YaHei', sans-serif;
+    font-family: 方正博雅刊宋_GBK, sans-serif;
+    /*font-weight: bold;*/
     min-height: 740px;
 
     background: rgb(215, 215, 215);
@@ -175,7 +177,8 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', 'MingLiU', 'Microsoft YaHei', georgia, serif;
+    font-family: 方正博雅刊宋_GBK, georgia, serif;
+    /*font-weight: bold;*/
     font-size: 50px;
     line-height: 1.5;
 }
@@ -261,6 +264,26 @@ a:focus {
 
 #westernFont ul {
     font-size: 60px;
+}
+
+#easternFontJapan {
+    font-size: 30px;
+}
+
+#setFont ul{
+    list-style-type: disc;
+    margin-left: 1em;
+    font-size: 40px;
+    line-height: 70px;
+}
+#easternFontChinaPic1 ul li {
+    display: inline-block;
+}
+#easternFontChinaPic2 ul li {
+    display: inline-block;
+}
+#easternFontChinaPic3 ul li {
+    display: inline-block;
 }
 
 #overview { display: none }
