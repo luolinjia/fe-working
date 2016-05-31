@@ -81,7 +81,8 @@
 					self.find('ul').slimScroll({
 						height: setHeight + 30,
 						width: $ulWidth + 10,
-						color: '#fff'
+						distance: 15,
+						color: '#333'
 					});
 
 					self.find('.slimScrollDiv ul').css('height', setHeight).slideUp(10);
