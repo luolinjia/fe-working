@@ -1,6 +1,5 @@
 .i-select {
     float: right;
-    /* padding: 0 20px; */
     margin-left: 10px;
     border: 1px solid #999;
     width: 120px;
@@ -10,12 +9,14 @@
     border-radius: 6px;
     /*display: inline-block;*//*there is no left label => enable*/
 }
+.i-select.active i {
+    color: #00bff0;
+}
 .i-select ul {
     margin-top: 1px;
     border-radius: 3px;
-    /*margin: 10px;*/
     padding: 10px 0;
-    background-color: #fffdec;
+    background-color: #fdfdfd;
     box-shadow: 0 0 10px #ccc;
     width: 100%;
     display: none;
@@ -25,17 +26,19 @@
     line-height: 46px;
     color: #333;
     border-radius: 6px;
-    /* margin: 5px 15px; */
-    padding-left: 20px;
+    padding-left: 35px;
     cursor: pointer;
 }
-.i-select ul li:hover {
-    background-color: #fff5e4;
-    color: #fff;
+.i-select ul li a {
+    color: #333;
+    text-decoration: none;
 }
-.i-select ul li.selected {
-    background-color: #fff5e4;
-    color: #fff;
+.i-select ul li:hover, .i-select ul li.selected {
+    background-color: #f5f5f5;
+    color: #00bff0;
+}
+.i-select ul li:hover a, .i-select ul li.selected a {
+    color: #00bff0;
 }
 .i-select span {
     margin-left: 15px;
@@ -44,6 +47,7 @@
     position: absolute;
     right: 5px;
     line-height: 42px;
+    font-size: 22px;
 }
 .for-select {
     display: none;
@@ -51,21 +55,19 @@
     position: absolute;
     top: 0;
 }
-.search {
-    width: 88%;
-}
 .search input {
     line-height: 30px;
-    width: 93%;
-    margin: 5px 15px;
+    margin: 5px 10px;
     padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #dbdee3;
 }
 .search i {
     right: 20px;
     line-height: 40px;
 }
 .search-tip {
-    color: #fff;
+    color: #333;
     padding-left: 15px;
     font-size: 14px;
 }

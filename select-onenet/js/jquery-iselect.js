@@ -82,12 +82,13 @@
 						height: setHeight + 30,
 						width: $ulWidth + 10,
 						distance: 15,
-						color: '#333'
+						color: '#e0e0e0'
 					});
 
 					self.find('.slimScrollDiv ul').css('height', setHeight).slideUp(10);
 
 					self.find('.slimScrollDiv ul').css('width', $ulWidth);
+					self.find('.slimScrollDiv ul .search input').css('width', $ulWidth-30);
 
 					self.hover(function () {
 						$(this).find('.slimScrollDiv').stop().slideDown(200);
