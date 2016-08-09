@@ -1,0 +1,232 @@
+/***************************************points***************************************/
+@-webkit-keyframes c2 {
+    0% {
+        -webkit-transform: scale(.522);
+        -ms-transform: scale(.522);
+        -moz-transform: scale(.522);
+        -o-transform: scale(.522);
+        transform: scale(.522);
+        opacity: 1
+    }
+    50% {
+        -webkit-transform: scale(.822);
+        -ms-transform: scale(.822);
+        -moz-transform: scale(.822);
+        -o-transform: scale(.822);
+        transform: scale(.822);
+        opacity: .4
+    }
+    98% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: .2
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@-ms-keyframes c2 {
+    0% {
+        -webkit-transform: scale(.522);
+        -ms-transform: scale(.522);
+        -moz-transform: scale(.522);
+        -o-transform: scale(.522);
+        transform: scale(.522);
+        opacity: 1
+    }
+    50% {
+        -webkit-transform: scale(.822);
+        -ms-transform: scale(.822);
+        -moz-transform: scale(.822);
+        -o-transform: scale(.822);
+        transform: scale(.822);
+        opacity: .4
+    }
+    98% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: .2
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@-moz-keyframes c2 {
+    0% {
+        -webkit-transform: scale(.522);
+        -ms-transform: scale(.522);
+        -moz-transform: scale(.522);
+        -o-transform: scale(.522);
+        transform: scale(.522);
+        opacity: 1
+    }
+    50% {
+        -webkit-transform: scale(.822);
+        -ms-transform: scale(.822);
+        -moz-transform: scale(.822);
+        -o-transform: scale(.822);
+        transform: scale(.822);
+        opacity: .4
+    }
+    98% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: .2
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@-o-keyframes c2 {
+    0% {
+        -webkit-transform: scale(.522);
+        -ms-transform: scale(.522);
+        -moz-transform: scale(.522);
+        -o-transform: scale(.522);
+        transform: scale(.522);
+        opacity: 1
+    }
+    50% {
+        -webkit-transform: scale(.822);
+        -ms-transform: scale(.822);
+        -moz-transform: scale(.822);
+        -o-transform: scale(.822);
+        transform: scale(.822);
+        opacity: .4
+    }
+    98% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: .2
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes c2 {
+    0% {
+        -webkit-transform: scale(.522);
+        -ms-transform: scale(.522);
+        -moz-transform: scale(.522);
+        -o-transform: scale(.522);
+        transform: scale(.522);
+        opacity: 1
+    }
+    50% {
+        -webkit-transform: scale(.822);
+        -ms-transform: scale(.822);
+        -moz-transform: scale(.822);
+        -o-transform: scale(.822);
+        transform: scale(.822);
+        opacity: .4
+    }
+    98% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: .2
+    }
+    100% {
+        opacity: 0
+    }
+}
+.circle {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+}
+.circle div.c1 {
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    opacity: 1;
+    border-radius: 90px;
+    font-size: 34px;
+    color: white;
+}
+.circle div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #00ff9c;
+    width: 90px;
+    height: 90px;
+    margin-left: -45px;
+    margin-top: -45px;
+    opacity: 1;
+    border-radius: 90px;
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -ms-animation-duration: 1.2s;
+    -ms-animation-timing-function: linear;
+    -ms-animation-iteration-count: infinite;
+    -moz-animation-duration: 1.2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-duration: 1.2s;
+    -o-animation-timing-function: linear;
+    -o-animation-iteration-count: infinite;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.circle.blue div {
+    background-color: #0f9ffb;
+    -webkit-animation: none;
+    -o-animation: none;
+    animation: none;
+}
+.circle.green div {
+    background-color: #0ec86d;
+}
+.circle.rosy div {
+    background-color: #ff9500;/*ff7800*/
+}
+.circle.red div {
+    background-color: #ff0000; /*ff2900*/
+}
+.circle div.c2 {
+    -webkit-animation-name: c2;
+    /*-webkit-animation-delay: .6s;*/
+    -ms-animation-name: c2;
+    /*-ms-animation-delay: .6s;*/
+    -moz-animation-name: c2;
+    /*-moz-animation-delay: .6s;*/
+    -o-animation-name: c2;
+    /*-o-animation-delay: .6s;*/
+    animation-name: c2;
+    /*animation-delay: .6s;*/
+}
+.circle div.c3 {
+    -webkit-animation-name: c2;
+    -webkit-animation-delay: .6s;
+    -ms-animation-name: c2;
+    -ms-animation-delay: .6s;
+    -moz-animation-name: c2;
+    -moz-animation-delay: .6s;
+    -o-animation-name: c2;
+    -o-animation-delay: .6s;
+    animation-name: c2;
+    animation-delay: .6s;
+}
+/************************************************************************************/

@@ -17,12 +17,13 @@
 		var o = $(this),
 			initData, cacheData,
 			settings = {
-				icon: 'icon-keyboard_arrow_down',
-				hasRedirect: false,
+				icon: 'icon-angle-down',
+				// hasRedirect: false,
 				hasSearch: false,
 				searchIcon: '',
 				searchData: {
 					url: '',
+					method: 'POST',
 					data: {}
 				}
 			}, req = {
@@ -33,7 +34,7 @@
 				 */
 				reqJsonData: function (options, callback) {
 					$.ajax($.extend({
-						type: 'POST',
+						type: settings.searchData.method,
 						dataType: 'JSON'
 					}, options, true)).done(function(data){
 						if (data && $.isFunction(callback)) {
@@ -68,7 +69,7 @@
 						list.push('<li data-val="' + key + '" ' + ('true' === isSelected ? 'selected' : '') + '><a href="' + ('undefined' !== url ? url : 'javascript:;') + '">' + val + '</a></li>');
 					}
 
-					self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="' + settings.icon + '"></i><ul>' + (settings.hasSearch ? '<div class="search"><input type="text"/>' + (settings.searchIcon === '' ? '' : '<i class="' + settings.icon + '"></i>') + '</div>' : '') + list.join('') + '</ul>');
+					self.wrap('<div class="i-select"></div>').parent().prepend('<span>' + defaultVal + '</span><i class="' + settings.icon + '"></i><ul>' + (settings.hasSearch ? '<div class="search"><input type="text"/>' + (settings.searchIcon === '' ? '' : '<i class="' + settings.searchIcon + '"></i>') + '</div>' : '') + list.join('') + '</ul>');
 					self.addClass('for-select').parent().css('width', self.outerWidth());
 
 					_.bindEvents(self.parent(), defaultKey);
@@ -84,18 +85,19 @@
 						distance: 15,
 						color: '#e0e0e0'
 					});
-
+					self.find('.slimScrollDiv').css('position', 'absolute').slideUp(10);
 					self.find('.slimScrollDiv ul').css('height', setHeight).slideUp(10);
-
 					self.find('.slimScrollDiv ul').css('width', $ulWidth);
 					self.find('.slimScrollDiv ul .search input').css('width', $ulWidth-30);
 
 					self.hover(function () {
 						$(this).find('.slimScrollDiv').stop().slideDown(200);
 						$(this).find('ul').stop().slideDown(200);
+						$(this).css('z-index', 2);
 					}, function () {
 						$(this).find('.slimScrollDiv').stop().slideUp(200);
 						$(this).find('ul').stop().slideUp(200);
+						$(this).css('z-index', 1);
 					});
 
 					// set default value for the select
@@ -139,6 +141,10 @@
 							$search.parent().siblings('li').hide();
 							$ul.append('<div class="search-tip">正在搜索...</div>');
 							preKeyword = $search.val();
+							if ('' === preKeyword) {
+								$search.parent().siblings('li').show();
+								return;
+							}
 							req.reqJsonData({
 								url: settings.searchData.url,
 								data: $.extend({key: preKeyword}, settings.searchData.data, true)
