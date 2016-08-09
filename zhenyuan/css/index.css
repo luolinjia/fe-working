@@ -1,0 +1,59 @@
+@import "global.css";
+.nav-top {
+    height: 40px;
+    line-height: 40px;
+    background-color: #2c3e50;
+}
+.nav-top .grid {
+    position: relative;
+}
+.nav-top .nav-top-left a, .nav-top .nav-top-right a {
+    color: white;
+}
+.nav-top-left {
+    display: inline-block;
+}
+.nav-top-right {
+    display: inline-block;
+    right: 0;
+    position: absolute;
+}
+.nav-top-right a {
+    display: inline-block;
+    height: 39px;
+    width: 39px;
+    /*border-right: 1px solid #17202a;*/
+    /*border-left: 1px solid #17202a;*/
+    text-align: center;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.nav-top-right a:hover {
+    background-color: #000;
+    color: #1dd2af;
+}
+.header {
+    height: 90px;
+    line-height: 90px;
+}
+.header .grid {
+    position: relative;
+}
+.header .h-logo {
+    background: url("../img/logo.png") no-repeat;
+    display: inline-block;
+    height: 90px;
+    width: 120px;
+}
+.header .h-menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+.header .h-menu .menu-li {
+    margin-left: 40px;
+}
+.header .menu-li.active, .header .menu-li:hover {
+    color: #1dd2af;
+}

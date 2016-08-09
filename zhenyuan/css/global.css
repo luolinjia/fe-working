@@ -1,0 +1,97 @@
+@import "_inc/reset.css";
+@import "_inc/ui-fontello.css";
+body{
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: rgba(255, 255, 255, .95);
+    min-width: 1180px;
+}
+body a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #5d6e80;
+}
+body a:hover {
+    color: #1dd2af;
+}
+.grid {
+    width: 1185px;
+    margin: 0 auto;
+    *zoom: 1;
+}
+.grid:before, .grid:after {
+    display: table;
+    line-height: 0;
+    content: ""
+}
+.grid:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+.highlight{
+    color: red;
+}
+.tl{
+    text-align:left;
+}
+.tc{
+    text-align:center;
+}
+.tr{
+    text-align:right;
+}
+.bc{
+    margin-left:auto;
+    margin-right:auto;
+}
+.fl{
+    float:left;
+    display:inline;
+}
+.fr{
+    float:right;
+    display:inline;
+}
+.cb{
+    clear:both;
+}
+.cl{
+    clear:left;
+}
+.cr{
+    clear:right;
+}
+.vm{
+    vertical-align:middle;
+}
+.pr{
+    position:relative;
+}
+.pa{
+    position:absolute;
+}
+.abs-right{
+    position:absolute;
+    right:0;
+}
+.zoom{
+    zoom:1;
+}
+.hide{
+    display: none;
+}
+.hidden{
+    visibility:hidden;
+}
+.none{
+    display:none;
+}
