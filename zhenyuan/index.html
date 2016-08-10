@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>zhenyuan</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/unslider.css">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
     </div>
     <div class="header">
         <div class="grid">
-            <a class="h-logo" href="/"></a>
+            <a class="h-logo" href="/"><img src="img/logo.png" alt="logo" /></a>
             <div class="h-menu">
                 <a href="/" class="menu-li active" title="HOME">首页</a>
                 <a href="/" class="menu-li" title="INFO">公司介绍</a>
@@ -30,12 +31,28 @@
         </div>
     </div>
     <div class="content">
-        <div class="c-banner"></div>
+        <div class="c-banner">
+            <ul class="unstyled">
+                <li style="background:url(/img/ban1.jpg) center center no-repeat">
+                    <a style="display:block;width:100px;height: 30px;background-color: darkgreen;" href="/"></a>
+                </li>
+                <li style="background:url(/img/ban2.jpg) center center no-repeat"></li>
+            </ul>
+        </div>
         <div class="c-tech"></div>
         <div class="c-intro"></div>
     </div>
     <div class="footer">
 
     </div>
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/unslider-min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.c-banner').unslider({
+                animation: 'fade', autoplay: true, arrows: false
+            });
+        });
+    </script>
 </body>
 </html>

@@ -13,6 +13,20 @@
 .nav-top-left {
     display: inline-block;
 }
+.nav-top-left a {
+    display: inline-block;
+    height: 39px;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.nav-top-left a:hover {
+    background-color: #000;
+    color: #1dd2af;
+}
 .nav-top-right {
     display: inline-block;
     right: 0;
@@ -41,10 +55,16 @@
     position: relative;
 }
 .header .h-logo {
-    background: url("../img/logo.png") no-repeat;
-    display: inline-block;
-    height: 90px;
-    width: 120px;
+    /*background: url("../img/logo.png") no-repeat;*/
+    /*display: inline-block;*/
+    /*height: 90px;*/
+    /*width: 120px;*/
+    position: relative;
+}
+.header .h-logo img {
+    position: absolute;
+    height: 70px;
+    top: 10px;
 }
 .header .h-menu {
     display: inline-block;
@@ -53,6 +73,9 @@
 }
 .header .h-menu .menu-li {
     margin-left: 40px;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    transition: all .2s ease-in;
 }
 .header .menu-li.active, .header .menu-li:hover {
     color: #1dd2af;
