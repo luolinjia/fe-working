@@ -73,10 +73,43 @@
 }
 .header .h-menu .menu-li {
     margin-left: 40px;
+    font-size: 16px;
     -webkit-transition: all .2s ease-in;
     -moz-transition: all .2s ease-in;
     transition: all .2s ease-in;
 }
 .header .menu-li.active, .header .menu-li:hover {
     color: #1dd2af;
+}
+.c-banner {
+    height: 780px;
+}
+.c-banner ul {
+
+}
+.c-banner ul li {
+    left: 50%!important;
+}
+.c-banner ul li img {
+    position: absolute;
+    left: -960px;
+}
+.c-banner .c-banner-info {
+    width: 540px;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    left: -50%;
+    top: 200px;
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+}
+.c-banner .c-banner-button {
+    display: inline-block;
+    position: absolute;
+    left: -50%;
+    top: 280px;
+    text-align: center;
+    width: 255px;
 }

@@ -1,0 +1,34 @@
+.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #00c0f1;
+    color: #fff;
+    border-width: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 16px 25px;
+    line-height: 1em;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    /*ie里没有设置line-height的默认值为1，会导致继承父类height从而出现过高的问题*/
+    /*类型*/
+    /*大小*/
+    /*风格*/
+}
+.button:hover {
+    background-color: #40d8ff;
+    color: #fff;
+}
+.button:active {
+    background-color: #0ba2f1;
+    color: #fff;
+}
