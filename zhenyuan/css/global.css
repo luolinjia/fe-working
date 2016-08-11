@@ -97,7 +97,7 @@ body a:hover {
     display:none;
 }
 
-/******************************header & nav top **************************/
+/****************************** header & nav top **************************/
 .nav-top {
     height: 40px;
     line-height: 40px;
@@ -179,4 +179,15 @@ body a:hover {
 }
 .header .menu-li.active, .header .menu-li:hover {
     color: #1dd2af;
+}
+/****************************** footer **************************/
+.footer {
+    height: 100px;
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+}
+.footer p {
+    position: relative;
+    top: 45px;
 }
