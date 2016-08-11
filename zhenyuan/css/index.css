@@ -18,7 +18,7 @@
     height: 200px;
     display: inline-block;
     position: absolute;
-    left: -50%;
+    left: -270px;
     top: 200px;
     text-align: center;
     font-size: 60px;
@@ -27,8 +27,8 @@
 .c-banner .c-banner-button {
     display: inline-block;
     position: absolute;
-    left: -50%;
-    top: 280px;
+    left: -140px;
+    top: 300px;
     text-align: center;
     width: 255px;
 }

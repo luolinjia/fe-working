@@ -8,7 +8,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    background-color: #00c0f1;
+    background-color: #1DD2AF;
     color: #fff;
     border-width: 0;
     -webkit-border-radius: 3px;
@@ -25,10 +25,6 @@
     /*风格*/
 }
 .button:hover {
-    background-color: #40d8ff;
-    color: #fff;
-}
-.button:active {
-    background-color: #0ba2f1;
+    background-color: #23FFD4;
     color: #fff;
 }
