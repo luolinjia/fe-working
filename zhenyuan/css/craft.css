@@ -1,1 +1,33 @@
 @import "global.css";
+.craft-list {
+	padding-top: 50px;
+}
+.craft-list li {
+	height: 370px;
+	margin-bottom: 100px;
+}
+.craft-list .heighter {
+    height: 469px;
+}
+.craft-list .img-wrapper {
+	height: 100%;
+	display: inline-block;
+	background: #eee;
+	margin-right: 50px;
+}
+.craft-list  .far-right {
+	margin-right: 0;
+}
+.craft-list .img-wrapper p {
+    line-height: 50px;
+    text-align: center;
+}
+.craft-list .parent-2 {
+	width: 262px;
+}
+.craft-list .parent-5 {
+	width: 49%;
+}
+.craft-list .parent-6 {
+	width: 550px;
+}
