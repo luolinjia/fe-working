@@ -154,6 +154,5 @@
         });
         confirmDialog.open();
     };
-
     IOT.Dialog = Dialog;
 })();
