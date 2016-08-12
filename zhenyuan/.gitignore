@@ -1,0 +1,15 @@
+﻿.gitignore
+.htaccess
+.DS_Store
+_codesync
+libs/CoreLib/*
+.idea
+.idea/*
+.project
+.settings
+.buildpath
+.settings/*
+libs/corelib
+libs/corelib/*
+deployment.properties
+/www/static
