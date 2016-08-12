@@ -40,7 +40,7 @@
     text-align: center;
     margin-bottom: 60px;
 }
-.c-tech li {
+.c-tech .c-tech-li {
     width: 280px;
     height: 260px;
     display: inline-block;
@@ -51,7 +51,7 @@
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
-.c-tech li:last-child {
+.c-tech .c-tech-li.last {
     margin-right: 0;
 }
 .c-tech img {
