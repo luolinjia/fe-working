@@ -12,6 +12,7 @@
 .craft-list .img-wrapper {
 	height: 100%;
 	display: inline-block;
+	overflow: hidden;
 	background: #eee;
 	margin-right: 50px;
 }
@@ -22,12 +23,15 @@
     line-height: 50px;
     text-align: center;
 }
-.craft-list .parent-2 {
+.craft-list .parent-3 {
 	width: 262px;
 }
-.craft-list .parent-5 {
-	width: 49%;
+.craft-list .parent-4 {
+	width: 550px;
 }
 .craft-list .parent-6 {
-	width: 550px;
+	width: 574px;
+}
+.craft-list .parent-7 {
+	width: 866px;
 }

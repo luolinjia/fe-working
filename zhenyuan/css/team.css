@@ -1,2 +1,23 @@
 @import "global.css";
-
+.team-list li {
+	display: inline-block;
+	width: 290px;
+	height: 400px;
+}
+.team-list li a {
+	display: block;
+}
+.team-list .text-wrapper  {
+	position: relative;
+	top: -10px;
+	background: rgba(200,200,200,.7);
+}
+.text-wrapper p {
+	position: relative;
+}
+.text-wrapper .name {
+	left: 0;
+}
+.text-wrapper .time {
+	right: 0;
+}
