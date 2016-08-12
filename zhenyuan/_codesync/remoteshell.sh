@@ -1,0 +1,1 @@
+. /etc/profile; /usr/bin/fis release -r /data/www/onenet_v3/www/resource --domains --dest static,tpl
