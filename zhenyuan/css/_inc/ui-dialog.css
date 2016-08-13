@@ -1,4 +1,4 @@
-.ui-dialog-mask {
+/*.ui-dialog-mask {
     display: none;
     position: fixed;
     _position: absolute;
@@ -11,7 +11,7 @@
     opacity: .7;
     filter: alpha(opacity=70);
     width: 100%;
-}
+}*/
 .ui-dialog-pop {
     display: none;
     position: fixed;
@@ -42,11 +42,11 @@
     margin: 20px
 }
 .ui-dialog-pop .ui-dialog-close {
-    position: fixed;
-    right: 5px;
+    position: absolute;
+    right: 0px;
     top: -12px;
     cursor: pointer;
-    font-size: 80px;
+    font-size: 50px;
     color: #fff;
 }
 .ui-dialog-pop .ui-dialog-ft {

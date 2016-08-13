@@ -2,9 +2,9 @@
 /*.gird {
 	padding-bottom: 50px;
     padding-top: 50PX;
-}
-.team-list */{
-	/*padding-top: 50px;*/
+}*/
+.team-list {
+	padding-top: 50px;
 }
 .team-list li {
 	display: inline-block;
@@ -38,7 +38,13 @@
     color: rgb(187, 187, 187);
     font-size: 14px;
     width: 100%;
-    height: 500px;
+    height: 430px;
+}
+.designer-detail img{
+    margin-right: 10px;
+}
+.dialog-wrapper {
+	margin-top: -144px
 }
 .designer-intro {
 	display: inline-block;
@@ -57,4 +63,7 @@
 }
 .designer-intro p {
     line-height: 25px;
+ }
+ .designer-intro .works {
+ 	    padding-top: 50px;
  }

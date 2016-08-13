@@ -60,7 +60,7 @@
             this.$root.append($(options.content || ''));
 
             if(options.showFooter){
-                this.$root.append($('<div class="ui-dialog-ft"><a class="button j_dlg_close">'+IOT.tr('关闭')+'</a></div>'));
+                this.$root.append($('<div class="ui-dialog-ft"><a class="button j_dlg_close">关闭'+'</a></div>'));
             }
 
             this._$mask = $('<div class="ui-dialog-mask"></div>').appendTo($('body'));
@@ -133,7 +133,7 @@
 
     Dialog.confirm = function(message, ok, cancel){
         var content = '<div class="ui-dialog-bd">' + message + '</div>';
-        content += '<div class="ui-dialog-ft"><button class="button j_ok" href="#">' + IOT.tr('确定') + '</button><button class="button secondary j_cancel" href="#">' + IOT.tr('取消') + '</button></div>';
+        content += '<div class="ui-dialog-ft"><button class="button j_ok" href="#">确定' + '</button><button class="button secondary j_cancel" href="#">取消' +  + '</button></div>';
         var confirmDialog = new IOT.Dialog({
             className: 'ui-dialog-confirm',
             width: '450px',
