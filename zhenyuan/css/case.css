@@ -1,4 +1,9 @@
 @import "global.css";
+@import "_inc/ui-dialog.css";
+
+.content {
+    margin-top: 100px;
+}
 
 .content li.c-top-li {
     cursor: pointer;
@@ -75,4 +80,11 @@
 }
 .c-top-li.hover .c-li-mask {
     display: block;
+}
+
+.ui-dialog-pop {
+    background-color: rgb(51, 51, 51);
+}
+.ui-dialog-pop .ui-dialog-close {
+    top: -50px;
 }
