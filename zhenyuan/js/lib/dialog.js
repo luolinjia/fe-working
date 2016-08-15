@@ -97,13 +97,49 @@
                 height: $(document).height() + 'px'
             });
         },
+
+        isLoading: function(callback){
+            var $imgList = this.$root.find('img'),
+                deferreds = [];
+            $imgList.each(function () {
+                var dfd = $.Deferred();
+                $(this).bind('load', function () {
+                    dfd.resolve();
+                });
+                if (this.complete) {
+                    setTimeout(function () {
+                        dfd.resolve();
+                    }, 1e3);
+                }
+                deferreds.push(dfd);
+            });
+
+            $.when.apply(null, deferreds).done(callback);
+        },
+
         /**
          * 打开对话框
          * */
         open: function(){
-            this.setSize();
-            this.$root.show();
-            this._$mask.show();
+            var $imgList = this.$root.find('img'),
+                deferreds = [], thiz = this;
+            $imgList.each(function () {
+                var dfd = $.Deferred();
+                $(this).bind('load', function () {
+                    dfd.resolve();
+                });
+                if (this.complete) {
+                    setTimeout(function () {
+                        dfd.resolve();
+                    }, 1e3);
+                }
+                deferreds.push(dfd);
+            });
+            $.when.apply(null, deferreds).done(function() {
+                thiz.setSize();
+                thiz.$root.show();
+                thiz._$mask.show();
+            });
         },
         /**
          * 关闭对话框

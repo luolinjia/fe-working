@@ -3,8 +3,8 @@
 	padding-bottom: 50px;
     padding-top: 50PX;
 }*/
-.team-list {
-	padding-top: 50px;
+.content {
+	margin-top: 50px;
 }
 .team-list li {
 	display: inline-block;
@@ -34,7 +34,7 @@
     text-align: right;
 }
 .designer-detail {
-	background: rgb(51, 51, 51);
+	/*background: rgb(51, 51, 51);*/
     color: rgb(187, 187, 187);
     font-size: 14px;
     width: 100%;
@@ -43,8 +43,8 @@
 .designer-detail img{
     margin-right: 10px;
 }
-.dialog-wrapper {
-	margin-top: -144px
+.ui-dialog-pop {
+    background: rgb(51, 51, 51);
 }
 .designer-intro {
 	display: inline-block;

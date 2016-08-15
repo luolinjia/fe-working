@@ -54,7 +54,7 @@ $(function () {
             showClose: true,
             showFooter: false,
             className: '', //窗口最外层容器的类名
-            cache: true, //是否缓存。若为false则close()的时候会remove掉对话框对应的dom元素
+            cache: false, //是否缓存。若为false则close()的时候会remove掉对话框对应的dom元素
             width: '1040px' //窗口宽度，如不传递默认为40%
         });
         dialog.open();
