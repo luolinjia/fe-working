@@ -38,7 +38,20 @@
 }
 .c-tech h3 {
     text-align: center;
+    color: #1dd2af;
+    font-size: 32px;
+    font-family: '黑体';
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #ccc;
+}
+.c-tech em {
+    text-align: center;
+    color: #1dd2af;
+    font-style: normal;
+    margin-top: 11px;
+    display: block;
     margin-bottom: 60px;
+    font-size: 20px;
 }
 .c-tech .c-tech-li {
     width: 280px;
@@ -104,4 +117,195 @@
 }
 .c-tech li:hover .c-tech-info p {
     color: #aaa;
+}
+
+.materials-bg {
+    /*background: #F7F9F8;*/
+    /*width: 100%;*/
+    height: 496px;
+}
+.materials-bg li {
+    position: absolute;
+    float: left;
+}
+.materials-bg .materials-w {
+    text-shadow: 1px 1px 1px #ccc;
+    color: #1dd2af;
+    text-align: right;
+    width: 360px;
+    left: 0;
+    top: 110px;
+}
+.materials-bg .materials-w p {
+    font-size: 20px;
+}
+.materials-bg .materials-w h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+.materials-bg .materials-w span {
+    font-size: 26px;
+}
+.materials-bg .materials {
+    background: url(../img/pic-materials-list.png) no-repeat;
+    width: 204px;
+    height: 235px;
+    text-align: center;
+}
+.materials-bg .materials a {
+    display: block;
+    padding: 60px 20px;
+}
+.materials-bg .materials h3 {
+    font-size: 22px;
+    color: #555;
+    line-height: 45px;
+}
+.materials-bg .materials p {
+    color: #555;
+    line-height: 25px;
+}
+.materials-bg .material-ws {
+    top: 38px;
+    left: 410px;
+}
+.materials-bg .material-drain {
+    top: 38px;
+    left: 618px;
+}
+.materials-bg .material-power {
+    top: 38px;
+    left: 826px;
+}
+.materials-bg .material-wproof {
+    top: 219px;
+    left: 306px;
+}
+.materials-bg .material-glue {
+    top: 219px;
+    left: 514px;
+}
+.materials-bg .material-plates {
+    top: 219px;
+    left: 723px;
+}
+.materials-bg .material-other {
+    top: 219px;
+    left: 931px;
+}
+
+.service-process {
+    background: #f2f2f2;
+    padding: 50px 0 100px;
+}
+.sp-title {
+    text-shadow: 1px 1px 1px #ccc;
+    /*border-bottom: 1px solid #dbdcdc;*/
+    text-align: center;
+    margin-bottom: 40px;
+}
+.sp-title h2 {
+    color: #1dd2af;
+    font-size: 32px;
+    font-family: '黑体';
+    font-weight: bold;
+}
+.sp-title em {
+    color: #1dd2af;
+    font-style: normal;
+    margin-top: 11px;
+    display: block;
+    font-size: 20px;
+}
+.service-process .sp-list {
+    width: 1160px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.service-process .sp-list .w {
+    width: 1212px;
+}
+.service-process .sp-list li {
+    float: left;
+    text-align: center;
+    width: 150px;
+    margin-right: 52px;
+    position: relative;
+}
+.service-process .sp-list .icon-right-open {
+    position: absolute;
+    right: -40px;
+    top: 35px;
+    color: #1dd2af;
+    font-size: 30px;
+}
+.service-process .sp-list .ico-sp-bg {
+    height: 100px;
+    background: url(../img/pic-sp-bg.png);;
+    margin: 0 25px;
+    position: relative;
+}
+.service-process .sp-list .ico-sp-1 {
+    display: block;
+    background: url(../img/ico-process-1.png) no-repeat;
+    width: 50px;
+    height: 43px;
+    position: absolute;
+    left: 25px;
+    top: 28px;
+}
+.service-process .sp-list .ico-sp-2 {
+    display: block;
+    background: url(../img/ico-process-2.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+.service-process .sp-list .ico-sp-3 {
+    display: block;
+    background: url(../img/ico-process-3.png) no-repeat;
+    width: 50px;
+    height: 61px;
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+.service-process .sp-list .ico-sp-4 {
+    display: block;
+    background: url(../img/ico-process-4.png) no-repeat;
+    width: 50px;
+    height: 53px;
+    position: absolute;
+    left: 25px;
+    top: 24px;
+}
+.service-process .sp-list .ico-sp-6 {
+    display: block;
+    background: url(../img/ico-process-5.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+.service-process .sp-list li h4 {
+    color: #1dd2af;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 15px;
+}
+.service-process .sp-list li p {
+    color: #555;
+    margin-top: 10px;
+}
+
+
+.ui-dialog-pop {
+    background-color: rgb(51, 51, 51);
+}
+.ui-dialog-pop .ui-dialog-close {
+    top: -50px;
 }

@@ -35,3 +35,9 @@
 .craft-list .parent-7 {
 	width: 866px;
 }
+.ui-dialog-pop {
+	background-color: rgb(51, 51, 51);
+}
+.ui-dialog-pop .ui-dialog-close {
+	top: -50px;
+}

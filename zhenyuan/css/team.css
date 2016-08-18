@@ -63,7 +63,14 @@
 }
 .designer-intro p {
     line-height: 25px;
- }
- .designer-intro .works {
- 	    padding-top: 50px;
- }
+}
+.designer-intro .works {
+    padding-top: 50px;
+}
+
+.ui-dialog-pop {
+    background-color: rgb(51, 51, 51);
+}
+.ui-dialog-pop .ui-dialog-close {
+    top: -50px;
+}

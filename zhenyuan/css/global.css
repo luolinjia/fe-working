@@ -1,6 +1,7 @@
 @import "_inc/reset.css";
 @import "_inc/ui-fontello.css";
 @import "_inc/ui-button.css";
+@import "_inc/ui-dialog.css";
 body{
     font-family: 'Microsoft YaHei', sans-serif;
     background-color: rgba(255, 255, 255, .95);
