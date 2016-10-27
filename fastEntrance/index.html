@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test the hover fast entrance</title>
+    <style>
+
+        @-o-keyframes ltr {
+            0% {
+                transform: translateX(0);
+            }
+            35% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(-20px);
+            }
+            65% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes ltr {
+            0% {
+                transform: translateX(0);
+            }
+            35% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(-20px);
+            }
+            65% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+        .all {
+            width: 200px;
+            right: 40px;
+            bottom: 60px;
+            position: fixed;
+        }
+        .all:hover ul {
+            display: block;
+        }
+        .all ul {
+            list-style-type: none;
+            bottom: 19px;
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+        .all li {
+            margin-bottom: 8px;
+            background-color: #d1d1d1;
+            float: right;
+            border-radius: 5px;
+            clear: both
+        }
+        .all li a {
+            z-index: 1;
+            display: inline-block;
+            height: 40px;
+            padding: 0 20px;
+            line-height: 40px;
+            color: #041527;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            outline: none;
+            position: relative;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s
+        }
+        .all li a:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 5px;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            width: 0%;
+            height: 100%;
+            background: -webkit-linear-gradient(left, red , blue); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, red, blue); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, red, blue); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, red , blue); /* 标准的语法 */
+        }
+        .all li a:hover, .all li a:active {
+            color: #fdfdfd;
+        }
+        .all li a:hover:after, .all li a:active:after {
+            width: 100%;
+        }
+
+        .all-in {
+            position: relative;
+            height: 50px;
+            display: inline-block;
+            width: 50px;
+            float: right;
+        }
+        .all-in .same {
+            background: -webkit-linear-gradient(left, red , blue); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, red, blue); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, red, blue); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, red , blue); /* 标准的语法 */
+            width: 50px;
+            height: 8px;
+            margin-top: 8px;
+        }
+        .all-in:hover .ai-1 {
+            -webkit-animation: ltr 0.2s ease-in-out 0s 1 normal;
+            -moz-animation: ltr 0.2s ease-in-out 0s 1 normal;
+            -o-animation: ltr 0.2s ease-in-out 0s 1 normal;
+            animation: ltr 0.2s ease-in-out 0s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        .all-in:hover .ai-2 {
+            -webkit-animation: ltr 0.2s ease-in-out 0.1s 1 normal;
+            -moz-animation: ltr 0.2s ease-in-out 0.1s 1 normal;
+            -o-animation: ltr 0.2s ease-in-out 0.1s 1 normal;
+            animation: ltr 0.2s ease-in-out 0.1s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        .all-in:hover .ai-3 {
+            -webkit-animation: ltr 0.2s ease-in-out 0.2s 1 normal;
+            -moz-animation: ltr 0.2s ease-in-out 0.2s 1 normal;
+            -o-animation: ltr 0.2s ease-in-out 0.2s 1 normal;
+            animation: ltr 0.2s ease-in-out 0.2s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="all">
+    <ul>
+        <li><a href="###">体验</a></li>
+        <li><a href="###">意见反馈</a></li>
+        <li><a href="###">聘</a></li>
+        <li class="hidden"><a href="###">top</a></li>
+    </ul>
+    <div class="all-in">
+        <div class="ai-1 same"></div>
+        <div class="ai-2 same"></div>
+        <div class="ai-3 same"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+    });
+</script>
+</body>
+</html>
