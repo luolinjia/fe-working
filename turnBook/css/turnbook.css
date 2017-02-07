@@ -1,0 +1,46 @@
+.wrapper-book {
+    position: relative;
+}
+.wrapper-book .girdle, .wrapper-book .cover, .wrapper-book .content {
+    background: green;
+    width: 100px;
+    height: 130px;
+    margin: 0 auto;
+    -webkit-transform:rotate(20deg) translate(-80%,-30%);
+    transform:rotate(20deg) translate(-80%,-30%);
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.wrapper-book .cover {
+    background: red;
+}
+.wrapper-book .content {
+    background: blue;
+}
+.wrapper-book.active .girdle {
+    -webkit-transform:rotate(20deg) translate(20%,-30%) rotate3d(0, 1, 0, 180deg);
+    transform:rotate(20deg) translate(20%,-30%) rotate3d(0, 1, 0, 180deg);
+}
+.wrapper-book.active .girdle .girdle-front {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.wrapper-book.active .cover {
+    -webkit-transform:rotate(0deg) translate(-180%,-30%) rotate3d(0, 1, 0, 180deg);
+    transform:rotate(0deg) translate(-180%,-30%) rotate3d(0, 1, 0, 180deg);
+}
+.wrapper-book.active .cover .cover-front {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.wrapper-book.active .content {
+    -webkit-transform:rotate(0deg) translate(-80%,-30%);
+    transform:rotate(0deg) translate(-80%,-30%);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Turn Book</title>
+    <link rel="stylesheet" href="css/turnbook.css">
+</head>
+<body>
+    <div class="wrapper-book">
+        <div class="content">Here is QUESTION!!!</div>
+        <div class="cover">
+            <div class="cover-front">Book Cover!!!</div>
+        </div>
+        <div class="girdle active">
+            <div class="girdle-front">Hello OneNET!!!</div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/jQuery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var _ = {
+                $wrapperBook: $('.wrapper-book'),
+                init: function () {
+                    _.editPosition();
+                    _.animateBook();
+                },
+                editPosition: function () {
+                    this.$wrapperBook.css({'height': window.screen.availHeight, 'width': window.screen.availWidth});
+                },
+                animateBook: function () {
+                    this.$wrapperBook.on('click', function () {
+                        _.$wrapperBook.addClass('active');
+                    });
+                }
+            };
+            _.init();
+        });
+    </script>
+</body>
+</html>

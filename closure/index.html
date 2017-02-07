@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test closure</title>
+</head>
+<body>
+<ul>
+    <li id="s-1">string1</li>
+    <li id="s-2">string2</li>
+    <li id="s-3">string3</li>
+    <li id="s-4">string4</li>
+    <li id="s-5">string5</li>
+</ul>
+<script type="text/javascript">
+    function showID(num) {
+        return function () {
+            console.log(num);
+        };
+    }
+    for (var i = 0, size = 5; i < size; i++) {
+        var flag = i+1;
+//        document.getElementById('s-' + flag).onclick = function (i) {
+//            console.log(flag);
+//        };
+        document.getElementById('s-' + flag).onclick = showID(flag);
+    }
+</script>
+</body>
+</html>
